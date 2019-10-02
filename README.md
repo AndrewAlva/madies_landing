@@ -1,4 +1,7 @@
-# OG_Brunch
+# Madies: Landing Page
+Frontend repo of Madies.mx landing page, a Mexican company dedicated to sell liofilized fruits like Mango, Carrots and Edamames.
+
+## OG_Brunch
 My first brunch boilerplate created from scratch.
 
 
