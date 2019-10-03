@@ -8,6 +8,24 @@
 @import 'global/vars';
 @import 'global/mixins';
 @import 'global/fonts';
+@import 'global/grid';
 @import 'global/default';
 
-@import 'views/_home'
+@import 'views/_home';
+
+.tester{
+	width: 19px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 6px;
+
+	background-color: rgba(255,255,255,.5);
+}
+
+.random{
+	position: absolute;
+	// background-color: #ff6600;
+	top: 100px;
+	height: 200px;
+}
