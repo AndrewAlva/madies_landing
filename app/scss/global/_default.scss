@@ -5,11 +5,24 @@
 }
 
 body{
-	color: #dadada;
+	color: #fff;
 	background-color: #202020;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, section, div, nav, ul, li, button{
 	margin: 0;
 	padding: 0;
+}
+
+.display{
+	position: relative;
+	font-family: 'Blw';
+	font-size: 10.66667vw;
+	line-height: 1em;
+	font-weight: 100;
+	@include smoothFont;
+	margin-top: 19.45vw;
+	color: #999;
+	margin-left: -0.1vw;
+	letter-spacing: -0.43vw;
 }
