@@ -26,3 +26,40 @@ body, h1, h2, h3, h4, h5, h6, p, section, div, nav, ul, li, button{
 	margin-left: -0.1vw;
 	letter-spacing: -0.43vw;
 }
+
+a{
+	text-decoration: none;
+}
+
+ul{
+	li{
+		list-style: none;
+	}
+}
+
+.regla{
+	width: 100%;
+	z-index: 99;
+	height: 8vw;
+	background-color: $yellow;
+	opacity: .3;
+	position: absolute;
+	top: 0;
+	left: 8;
+}
+
+#main-wrapper{
+	background-image: url("../img/madies_back.jpg");
+	width: 100%;
+	opacity: .8;
+	overflow: hidden;
+	user-select: none;
+}
+
+// quitar la de header
+.img-wrapper{
+	overflow: hidden;
+	img{
+		height: 100%;
+	}
+}

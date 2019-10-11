@@ -1,9 +1,8 @@
 .mobile-grid{
-	@include flexIt;
-	position: absolute;
+	// position: absolute;
+	position: relative;
 	width: 100%;
 	height: 100%;
-
 	.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16, .col-17, .col-18, .col-19, .col-20, .col-21, .col-22, .col-23, .col-24{
 		position: relative;
 		padding-left: 0.8%;
@@ -60,6 +59,10 @@
 	.offset-23{margin-left: 95.833%;}
 	
 	&.testing{
+		position: fixed;
+		@include flexIt;
+		z-index: 4;
+		pointer-events: none;
 		[class*="col-"]{
 			&:before, &:after{
 				content: '';
@@ -82,7 +85,7 @@
 				position: relative;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(255,0,0,.1);
+				background-color: rgba(255,0,0,.2);
 			}
 		}
 	}

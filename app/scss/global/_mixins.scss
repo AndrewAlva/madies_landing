@@ -154,3 +154,10 @@
 		flex-wrap: nowrap;
 }
 
+// function
+@function getvw($value){
+	@return ($value * 100) / 750;
+}
+@function borderR($value){
+	@return ($value * 2);
+}

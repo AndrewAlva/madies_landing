@@ -10,9 +10,18 @@
 @import 'global/fonts';
 @import 'global/grid';
 @import 'global/default';
+@import 'global/type-styles';
+@import 'global/buttons';
+@import 'global/helpers';
 
 @import 'views/_home';
-
+@import'views/header';
+@import 'views/section1';
+@import 'views/section2';
+@import 'views/section3';
+@import 'views/section4';
+@import 'views/section5';
+@import 'views/footer';
 .tester{
 	width: 19px;
 	height: 100%;

@@ -1,0 +1,28 @@
+.index-1{
+	z-index: 1;
+}
+.index-2{
+	z-index: 2;
+}
+
+// circle
+.circle, .semi-circle{
+	display: inline-block;
+}
+
+.circle{
+	border-radius: 50%;
+}
+
+.radius-top{
+	border-radius: 100vw 100vw 0 0;
+}
+.radius-right{
+	border-radius: 0 100vw 100vw 0;
+}
+.radius-left{
+	border-radius: 100vw 0 0 100vw;
+}
+.radius-bottom{
+	border-radius: 0 0 100vw 100vw;
+}

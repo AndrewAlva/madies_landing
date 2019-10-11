@@ -1,0 +1,22 @@
+section#section2{
+	height: 136vw;
+	background: $blue;
+	padding-top: 24.6vw;
+	margin-top: -8vw;
+	.display-wrapper{
+		position: relative;
+		li.dsp1{
+			color: $white;
+			line-height: 16.8vw;
+			padding-left: .95vw;
+		}
+		.img-wrapper{
+			width: getvw(364vw);
+			height: getvw(450vw);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, calc(-50% - -0.5vw));
+		}
+	}
+}

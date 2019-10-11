@@ -1,0 +1,89 @@
+section#section4{
+	padding-top: 36.5vw;
+	padding-bottom: 8.4vw;
+	background: $black;
+	.top-section{
+		display: flex;
+		h2{
+			text-align: right;
+			padding-right: 1.1vw;
+		}
+		.circle-wrapper{
+			padding: 0 0 0 0.27vw;
+			transform: translateY(-1.2vw);
+			.semi-circle{
+				height: getvw(45.75vw);
+				width: getvw(89.22vw);
+				background-color: $green;
+				display: inline-block;
+				position: absolute;
+				left: -7.5vw;
+				top: 1.7vw;
+			}
+			.circle{
+				height: getvw(118vw);
+				width: getvw(118vw);
+				background-color: $yellow;
+			}
+		}
+	}
+	// slider
+	.slider-wrapper{
+		display: flex;
+		margin-top: 12vw;
+		margin-bottom: 14.6vw;
+		.controller{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			button.btn{
+				color: white;
+				text-transform: uppercase;
+				margin: 0;
+				display: block;
+				border-width: 0;
+				width: 100%;
+				height: 2.4vw;
+				line-height: 3vw;
+			}
+		}
+		.slides-wrapper{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			position: relative;
+			.inner-wrapper{
+				overflow: hidden;
+			}
+			.img-wrapper{
+				height: getvw(525vw);
+				img{
+					height: 100%;
+				}
+			}
+		}
+		.fruit-name{
+			text-transform: uppercase;
+			text-align: center;
+			z-index: 2;
+			position: absolute;
+			bottom: -6vw;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.text-wrapper{
+		&.text-right{
+			margin-top: 8vw;
+			padding-bottom: 8.66667vw;
+		}
+		p.p2{
+			padding-left: 0.1vw;
+			text-transform: uppercase;
+			line-height: 5.9vw;
+			&:first-child{
+				margin-bottom: 5.9vw
+			}
+		}
+	}
+}
