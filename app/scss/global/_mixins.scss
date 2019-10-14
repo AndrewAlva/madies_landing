@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@mixin content-box{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
 @mixin transitions-ease($timing){
 	-webkit-transition: all $timing cubic-bezier(.3,0,.2,1);
 	-moz-transition: all $timing cubic-bezier(.3,0,.2,1);

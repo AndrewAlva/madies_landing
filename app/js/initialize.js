@@ -3,7 +3,10 @@
 // without waiting for stylesheets, images, and
 // subframes to finish loading
 document.addEventListener('DOMContentLoaded', function() {
-    // Do something
+	// Activate scrollTop
+    document.getElementById('backTop').addEventListener('click', function(){
+    	toTop();
+    });
 });
 
 
@@ -12,4 +15,10 @@ window.onload = function() {
     // Do something, remove preloader perhaps
     console.log("Page fully loaded.");
     console.log("Initialize.js");
+
+    // Animiation frame loop at 60fps to enable "toTop()" function
+    RAF.init();
+
+    var FruitsSlider = new Carousel('fruits-slider');
+    FruitsSlider.init();
 }
