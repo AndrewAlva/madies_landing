@@ -5,6 +5,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Do something
     deviceDetector.init();
+
+    // Activate scrollTop
+    var backTopTriggers = document.getElementsByClassName('backTop');
+    for (var i = 0; i < backTopTriggers.length; i++) {
+    	backTopTriggers[i].addEventListener('click', function(){
+	    	toTop();
+	    });
+    }
+    
 });
 
 
@@ -13,4 +22,7 @@ window.onload = function() {
     // Do something, remove preloader perhaps
     console.log("Page fully loaded.");
     console.log("Initialize.js");
+
+    // Animiation frame loop at 60fps to enable "toTop()" function
+    RAF.init();
 }
