@@ -1,16 +1,33 @@
 button{
 	background-color: transparent;
 	border: none;
+	outline: none;
 }
 .btn{
 	font-family: 'NB-L';
 	font-weight: 500;
-	font-size: 3.2vw;
 	outline: none;
 	&.btn-next{
 		text-align: right;
 	}
 	&.btn-prev{
 		text-align: left;
+	}
+}
+
+.is-mobile{
+	.btn{
+		font-size: 3.2vw;
+	}
+}
+.is-desktop{
+	.btn{
+		font-size: 1.45834vw;
+	}
+	.btn-2{
+		font-family: 'NB-L';
+		font-weight: 500;
+		outline: none;
+		font-size: 2.08334vw;
 	}
 }

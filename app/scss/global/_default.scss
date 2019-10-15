@@ -49,11 +49,20 @@ ul{
 }
 
 #main-wrapper{
-	background-image: url("../img/madies_back.jpg");
-	width: 100%;
-	opacity: .8;
+	// background-image: url("../img/madies_back.jpg");
 	overflow: hidden;
-	user-select: none;
+	.img-back{
+		pointer-events: none;
+		// background-image: url("../img/madies_desktop.jpg");
+		width: 100%;
+		opacity: .5;
+		z-index: 99;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		img{width: 100%;}
+	}
 }
 
 // quitar la de header

@@ -1,27 +1,35 @@
 include _icons.jade
 footer#footer
-	.circle-wrapper.col-4.offset-16
-		span.circle
-		span.circle
-		span.circle
-		span.semi-circle
-	.links-wrapper
-		ul.social-links.col-6.offset-4
-			li
-				a.a2.links(href="") Instagram
-			li
-				a.a2.links(href="") Facebook
-			li
-				a.a2.links(href="") Pinterest
-		a.mail-link.col-7.offset-3(href="mailto:quegusto@madies.mx")
-			span.a2.links quegusto
-			span.a2.links @madies.mx
-	.bottom-section
-		a.a2.col-6.offset-4(href="") More Info
-		button.arrow-up.col-2.offset-8
-			+up-arrow
-	.credits
-		h6.col-4.offset-4
-			a.a3(href="") ©madies
-		h6.mandel-link.offset-2
-			a.a3(href="") Site by Mandelbrot Studio
+	.desktop-grid.mobile-grid
+		.circle-wrapper.col-4.offset-16.col-lg-2.offset-lg-15
+			span.circle
+			span.circle
+			span.circle
+			span.semi-circle
+		.links-wrapper
+			ul.social-links.col-6.offset-4.offset-lg-2.col-lg-4
+				//- agregar .link-style en mobile
+				li
+					a.a2.links.link-style(href="") Instagram
+				li
+					a.a2.links.link-style(href="") Facebook
+				li
+					a.a2.links.link-style(href="") Pinterest
+
+			a.mail-link.col-7.offset-3.offset-lg-1(href="mailto:quegusto@madies.mx")
+				span.a2.links.link-style quegusto
+				span.a2.links.link-style @madies.mx
+			//- borrar estos en mobile
+			button.a2.no-mobile.backTo.link-style BACK TO TOP
+			a.a2.no-mobile.link-style.more-info.offset-lg-7 More Info
+		//- borrar en desktop
+		.bottom-section
+			a.a2.col-6.offset-4(href="") More Info
+			button.arrow-up.col-2.offset-8
+				+up-arrow
+		.credits
+			h6.madies-inc.a3.style-link.col-4.offset-4.offset-lg-2©MADIES
+			h6.mandel-link.offset-2
+				a.a3.style-link(href="") Site by Mandelbrot Studio
+			h6.a3.date.style-link 019
+		

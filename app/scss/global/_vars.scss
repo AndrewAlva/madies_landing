@@ -7,11 +7,20 @@ $black: #000000;
 $white: #EDEDED;
 
 // Grid
-$mobile-grid__gutterWidth: 1.6%;
+// mobile
+$mobile-grid__gutterWidth: 1.6vw;
 $mobile-grid__gutterHalfWidth: $mobile-grid__gutterWidth / 2;
+// Desktop
+$desktop-grid__gutterWidth: 1.30208vw;
+$desktop-grid__gutterHalfWidth: $desktop-grid__gutterWidth / 2;
 
 // Margin
 $m9: 9.33334vw;
 $m10: 10.66667vw;
 $m13: 13.33334vw;
 $m16: 16vw;
+// img out main margin
+$outMargin: -5.078125vw;
+
+// grid
+$desktop-col-width: 3.74348vw;

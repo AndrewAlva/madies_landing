@@ -158,6 +158,12 @@
 @function getvw($value){
 	@return ($value * 100) / 750;
 }
+@function getvwDesktop($value){
+	@return ($value * 100) / 1920;
+}
 @function borderR($value){
 	@return ($value * 2);
+}
+@function getColWidth($amount){
+	@return ($desktop-col-width * $amount)
 }

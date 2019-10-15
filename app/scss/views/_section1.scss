@@ -1,70 +1,232 @@
-section#section1{
-	background-color: $white;
-	padding-top: 58.5vw;
-	color: $black;
-	p.p1{
-		padding-bottom: 8.3vw;
-	}
-	.middle-section{
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-		.img-wrapper{
-			height: getvw(431vw);
-			z-index: 2;
+// section#section1{
+// 	// background-color: $white;
+// 	padding-top: 58.5vw;
+// 	color: $black;
+// 	p.p1{
+// 		padding-bottom: 8.3vw;
+// 	}
+// 	.middle-section{
+// 		display: flex;
+// 		flex-direction: row;
+// 		align-items: flex-start;
+// 		.img-wrapper{
+// 			height: getvw(431vw);
+// 			z-index: 2;
+// 		}
+// 		.circle-wrapper{
+// 			position: relative;
+// 			display: flex;
+// 			justify-content: flex-end;
+// 			span.semi-circle{
+// 				display: inline-block;
+// 				&:first-child{
+// 					position: absolute;
+// 					width: getvw(108vw);
+// 					height: getvw(54vw);
+// 					background-color: $orange;
+// 					z-index: 2;
+// 					top:0;
+// 					left: -7.1vw;
+// 				}
+// 				&:last-child{
+// 					margin-top: -4.8vw;
+// 					width: getvw(72.5vw);
+// 					height: getvw(145vw);
+// 					background-color: $black;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.bottom-section{
+// 		position: relative;
+// 		h2{
+// 			text-align: right;
+// 			padding-right: 1.2vw;
+// 			margin-top: 11.9vw;
+// 			position: absolute;
+// 			z-index: 2
+// 		}
+// 		.img-wrapper{
+// 			width: getvw(557vw);
+// 			height: getvw(756vw);
+// 			margin-top: -10.1vw;
+// 		}
+// 		span.circle{
+// 			width: getvw(163vw);
+// 			height: getvw(158.84vw);
+// 			background-color: $black;
+// 			position: absolute;
+// 			bottom: 10.2vw;
+// 			right: .8vw;
+// 		}
+// 		img.mountain{
+// 			width: getvw(161vw);
+// 			position: absolute;
+// 			bottom: 8.1vw;
+// 			right: 0;
+// 			z-index: 2;
+// 		}
+// 	}
+// }
+
+// // ======================styles mobile (listo)======================
+// .is-mobile{
+// 	section#section1{
+// 		// background-color: $white;
+// 		padding-top: 58.5vw;
+// 		color: $black;
+// 		p.p1{
+// 			padding-bottom: 8.3vw;
+// 		}
+// 		.middle-section{
+// 			display: flex;
+// 			flex-direction: row;
+// 			align-items: flex-start;
+// 			.img-wrapper{
+// 				height: getvw(431vw);
+// 				z-index: 2;
+// 			}
+// 			.circle-wrapper{
+// 				position: relative;
+// 				display: flex;
+// 				justify-content: flex-end;
+// 				span.semi-circle{
+// 					display: inline-block;
+// 					&:first-child{
+// 						position: absolute;
+// 						width: getvw(108vw);
+// 						height: getvw(54vw);
+// 						background-color: $orange;
+// 						z-index: 2;
+// 						top:0;
+// 						left: -7.1vw;
+// 					}
+// 					&:last-child{
+// 						margin-top: -4.8vw;
+// 						width: getvw(72.5vw);
+// 						height: getvw(145vw);
+// 						background-color: $black;
+// 					}
+// 				}
+// 			}
+// 		}
+// 		.bottom-section{
+// 			position: relative;
+// 			h2{
+// 				text-align: right;
+// 				padding-right: 1.2vw;
+// 				margin-top: 11.9vw;
+// 				position: absolute;
+// 				z-index: 2
+// 			}
+// 			.img-wrapper{
+// 				width: getvw(557vw);
+// 				height: getvw(756vw);
+// 				margin-top: -10.1vw;
+// 			}
+// 			span.circle{
+// 				width: getvw(163vw);
+// 				height: getvw(158.84vw);
+// 				background-color: $black;
+// 				position: absolute;
+// 				bottom: 10.2vw;
+// 				right: .8vw;
+// 			}
+// 			img.mountain{
+// 				width: getvw(161vw);
+// 				position: absolute;
+// 				bottom: 8.1vw;
+// 				right: 0;
+// 				z-index: 2;
+// 			}
+// 		}
+// 	}
+// }
+// ======================styles desktop ======================
+.is-desktop{
+	section#section1{
+		background-color: $white;
+		position: relative;
+		padding-top: 5.84vw;
+		color: $black;
+		height: getvwDesktop(2362vw);
+		p.p1{
+			padding-bottom: 6.5vw;
+			padding-left: 0.6vw;
 		}
-		.circle-wrapper{
-			position: relative;
+		.middle-section{
 			display: flex;
-			justify-content: flex-end;
-			span.semi-circle{
-				display: inline-block;
-				&:first-child{
-					position: absolute;
-					width: getvw(108vw);
-					height: getvw(54vw);
-					background-color: $orange;
-					z-index: 2;
-					top:0;
-					left: -7.1vw;
-				}
-				&:last-child{
-					margin-top: -4.8vw;
-					width: getvw(72.5vw);
-					height: getvw(145vw);
-					background-color: $black;
+			flex-direction: row;
+			align-items: flex-start;
+			.img-wrapper{
+				// height: getvw(431vw);
+				height: getvwDesktop(790vw);
+				z-index: 2;
+			}
+			.circle-wrapper{
+				position: relative;
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 16.15vw;
+				opacity: .8;
+				span.semi-circle{
+					display: inline-block;
+					&:first-child{
+						position: absolute;
+						width: getvwDesktop(210vw);
+						height: getvwDesktop(105vw);
+						background-color: $orange;
+						z-index: 2;
+						top:0;
+						// left: -7.1vw;
+						left: -0.25vw;
+					}
+					&:last-child{
+						margin-top: -3.65vw;
+						width: getvwDesktop(140vw);
+						height: getvwDesktop(280vw);
+						background-color: $black;
+					}
 				}
 			}
 		}
-	}
-	.bottom-section{
-		position: relative;
-		h2{
-			text-align: right;
-			padding-right: 1.2vw;
-			margin-top: 11.9vw;
-			position: absolute;
-			z-index: 2
-		}
-		.img-wrapper{
-			width: getvw(557vw);
-			height: getvw(756vw);
-			margin-top: -10.1vw;
-		}
-		span.circle{
-			width: getvw(163vw);
-			height: getvw(158.84vw);
-			background-color: $black;
-			position: absolute;
-			bottom: 10.2vw;
-			right: .8vw;
-		}
-		img.mountain{
-			width: getvw(161vw);
-			position: absolute;
-			bottom: 8.1vw;
-			right: 0;
-			z-index: 2;
+		.bottom-section{
+			// -->
+			// position: inherit;
+			// <--
+			h2{
+				text-align: right;
+				// <--
+				padding-right: 0.95vw;
+				margin-top: -1.16vw;
+				// -->
+				position: absolute;
+				z-index: 2
+			}
+			.img-wrapper{
+				// width: getvw(557vw);
+				width: getvwDesktop(1090vw);
+				height: getvwDesktop(1480vw);
+				margin-top: -14vw;
+				position: absolute;
+				left: $outMargin;
+			}
+			span.circle{
+				width: getvwDesktop(509vw);
+				height: getvwDesktop(500vw);
+				background-color: $black;
+				position: absolute;
+				bottom: 3vw;
+				right: -4.7vw;
+			}
+			img.mountain{
+				width: getvwDesktop(518vw);
+				height: getvwDesktop(498vw);
+				position: absolute;
+				bottom: 0vw;
+				right: $outMargin;
+				z-index: 2;
+			}
 		}
 	}
 }

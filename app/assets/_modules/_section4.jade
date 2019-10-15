@@ -1,25 +1,34 @@
 section#section4
-	.top-section
-		h2.h2.col-10.offset-1 That's How Irresistible Madies is
-		.circle-wrapper.offset-7.col-5
-			span.semi-circle.radius-top
-			span.circle
-	.slider-wrapper
-		.controller.col-3.offset-2 
-			button.btn.btn-prev Prev
-		.slides-wrapper.col-12.offset-1
-			.inner-wrapper
-				.slider-1
-					.img-wrapper
-						img(src="../img/Madies_Foto_09.jpg", alt="")
-			p.dsp2.fruit-name Mangos
+	.desktop-grid.mobile-grid
+		.top-section
+			h2.h2.col-10.offset-1.col-lg-9.offset-lg-1 That's How Irresistible Madies is
+			.circle-wrapper.offset-7.col-5.offset-lg-8.col
+				span.semi-circle.radius-top
+				span.circle
+		//- slider section
+		.slider-wrapper
+			//- slider left
+			.slides-wrapper-2
+				.img-wrapper
+					img(src="../img/Madies_Foto_08.1.jpg", alt="")
+					
+			.controller.col-3.offset-2.offset-lg-15.col-lg-7
+				button.btn.btn-prev Prev
 
-		.controller.col-3.offset-1 
-			button.btn.btn-next Next
-	.text-wrapper.text-left.col-14.offset-2 
-		p.p2 through a process called lyophilization, we freeze &amp; dehydrate the fruit.
-		p.p2 That way keep all minerals, proteins , aroma &amp; flaviors.
+			.slides-wrapper.col-12.offset-1.offset-lg-15.col-lg-7
+				.inner-wrapper
+					.slider-1
+						.img-wrapper
+							img(src="../img/Madies_Foto_09.jpg", alt="")
+				p.dsp2.fruit-name Mangos
 
-	.text-wrapper.text-right.col-14.offset-8
-		p.p2 We don’t just eat madies from the packaging to the mouth.
-		p.p2 we can also create new snacks &amp; irresistible dishes.
+			.controller.col-3.offset-1.offset-lg-15.col-lg-7
+				button.btn.btn-next Next
+
+		.text-wrapper.text-left.col-14.offset-2.offset-lg-2.col-lg-8
+			p.p2 through a process called lyophilization, we freeze &amp; dehydrate the fruit.
+			p.p2 That way we keep all minerals, proteins, aroma &amp; flavors.
+
+		.text-wrapper.text-right.col-14.offset-8.offset-lg-2.col-lg-8
+			p.p2 We don’t just eat madies from the packaging to the mouth.
+			p.p2 we can also create new snacks &amp; irresistible dishes.

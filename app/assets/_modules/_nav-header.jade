@@ -1,9 +1,12 @@
 nav.nav-section
-	.logo-wrapper.offset-2.col-5
+	.logo-wrapper.offset-2.col-5.offset-lg-2.col-lg-3
 		img(src="../img/MadiesLogo.svg", alt="")
-	ul
-		li.lenguage-page
-			a.a1(href="#") Esp
-		li.a1 /
-		li.lenguage-page
-			a.a1(href="#") Eng
+	p.phrase.col-lg-4.offset-lg-5 Que Gusto
+	//- se añadío languaje wrapper para centrar en la parte del nav
+	.language-wrapper.col-lg-4.offset-lg-5
+		ul
+			li.language-page.spanish
+				a.a1(href="#") ESP
+			li.a1 /
+			li.language-page.english
+				a.a1(href="#") ENG
