@@ -49,11 +49,9 @@ ul{
 }
 
 #main-wrapper{
-	// background-image: url("../img/madies_back.jpg");
 	overflow: hidden;
 	.img-back{
 		pointer-events: none;
-		// background-image: url("../img/madies_desktop.jpg");
 		width: 100%;
 		opacity: .5;
 		z-index: 99;
