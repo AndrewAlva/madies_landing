@@ -1,47 +1,16 @@
-// section#section2{
-// 	height: 136vw;
-// 	background: $blue;
-// 	padding-top: 24.6vw;
-// 	margin-top: -8vw;
-// 	.display-wrapper{
-// 		position: relative;
-// 		li.dsp1{
-// 			color: $white;
-// 			line-height: 16.8vw;
-// 			padding-left: .95vw;
-// 		}
-// 		.img-wrapper{
-// 			width: getvw(364vw);
-// 			height: getvw(450vw);
-// 			position: absolute;
-// 			top: 50%;
-// 			left: 50%;
-// 			transform: translate(-50%, calc(-50% - -0.5vw));
-// 		}
-// 	}
-// }
-
+// ====================== Mobile =====================
 .is-mobile{
 	section#section2{
 		height: 136vw;
-		background: $blue;
 		padding-top: 24.6vw;
 		margin-top: -8vw;
 		.display-wrapper{
-			position: relative;
-			ul{
-				width: 100%;
-			}
 			li.dsp1{
-				text-align: center;
-				color: $white;
 				line-height: 16.8vw;
-				// padding-left: .95vw;
 			}
 			.img-wrapper{
 				width: getvw(364vw);
 				height: getvw(450vw);
-				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, calc(-50% - -0.5vw));
@@ -49,13 +18,30 @@
 		}
 	}
 }
-
+// ====================== Desktop =====================
 .is-desktop{
 	section#section2{
 		height: getvwDesktop(1630vw);
-		background: $blue;
-		// padding-top: 21.4vw;
 		padding-top: 16.6vw;
+		.display-wrapper{
+			li.dsp1{
+				line-height: 10.3vw;
+			}
+			.img-wrapper{
+				width: getvwDesktop(552vw);
+				height: getvwDesktop(680vw);
+				z-index: 2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, calc(-50% - -0.2vw));
+			}
+		}
+	}
+}
+// ====================== General Styles =====================
+.is-mobile,.is-desktop{
+	section#section2{
+		background: $blue;
 		.display-wrapper{
 			position: relative;
 			ul{
@@ -64,19 +50,9 @@
 			li.dsp1{
 				text-align: center;
 				color: $white;
-				// line-height: 16.8vw;
-				// padding-left: 0.35vw;
-				line-height: 10.3vw;
-				// padding-left: 0.35vw;
 			}
 			.img-wrapper{
-				width: getvwDesktop(552vw);
-				height: getvwDesktop(680vw);
-				z-index: 2;
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, calc(-50% - -0.2vw));
 			}
 		}
 	}
