@@ -4,6 +4,7 @@
 // subframes to finish loading
 document.addEventListener('DOMContentLoaded', function() {
     // Do something
+    deviceDetector.init();
 });
 
 

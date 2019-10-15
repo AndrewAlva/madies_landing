@@ -20,7 +20,7 @@
 		}
 		.links-wrapper{
 			display: flex;
-			margin-bottom: 6.1vw;
+			margin-bottom: 6.6vw;
 			a.links{
 				padding: 1.33334vw;
 				margin-left: -1.33334vw;
@@ -51,7 +51,7 @@
 		.bottom-section{
 			display: flex;
 			align-items: center;
-			margin-bottom: 7.1vw;
+			margin-bottom: 6.9vw;
 			a{
 				// background: yellow;
 				height: 3.2vw;
@@ -66,7 +66,7 @@
 				display: block;
 			}
 			.madies-inc{
-				transform: translateX(-1vw);
+				transform: translateX(-1.2vw);
 			}
 			.date{
 				display: none;
@@ -208,6 +208,10 @@
 			display: flex;
 			.style-link{
 				box-sizing: content-box;
+			}
+
+			.madies-inc{
+				color: $black;
 			}
 		}
 	}

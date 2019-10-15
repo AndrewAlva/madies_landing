@@ -1,7 +1,7 @@
 // ====================== Mobile =====================
 .is-mobile{
 	section#section4{
-		padding-top: 36.5vw;
+		padding-top: 36.2vw;
 		padding-bottom: 8.4vw;
 		.top-section{
 			h2{
@@ -11,9 +11,9 @@
 				padding: 0 0 0 0.27vw;
 				transform: translateY(-1.2vw);
 				.semi-circle{
-					height: getvw(45.75vw);
-					width: getvw(89.22vw);
-					top: 1.7vw;
+					height: getvw(44.2vw);
+					width: getvw(89vw);
+					top: 2vw;
 				}
 				.circle{
 					height: getvw(118vw);
@@ -135,7 +135,7 @@
 			display: inline-block;
 			p.p2{
 				&:first-child{
-					margin-bottom: 2.85vw
+					margin-bottom: 3.05vw
 				}
 			}
 		}
@@ -156,7 +156,7 @@
 					background-color: $green;
 					display: inline-block;
 					position: absolute;
-					left: -7.5vw;
+					left: -7.6vw;
 				}
 				.circle{
 					background-color: $yellow;
