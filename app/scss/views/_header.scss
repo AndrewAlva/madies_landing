@@ -197,7 +197,7 @@
 						display: inline-block;
 						display: none;
 					}
-					&:hover{
+					&:hover, &.current{
 						&.spanish{
 							&:after{
 								background-color: $orange;
