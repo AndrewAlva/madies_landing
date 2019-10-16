@@ -58,7 +58,6 @@
 		p.p1{
 			padding-bottom: 6.5vw;
 			padding-left: 0.6vw;
-			text-transform: uppercase;
 		}
 		.middle-section{
 			.img-wrapper{
@@ -113,6 +112,10 @@
 	section#section1{
 		background-color: $white;
 		color: $black;
+
+		p.p1{
+			text-transform: uppercase;
+		}
 
 		.middle-section{
 			display: flex;

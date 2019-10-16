@@ -106,8 +106,30 @@
 				&.spanish, 
 				&.english{
 					&:after{
+						content: "";
+						position: absolute;
+						display: inline-block;
+						display: none;
 						width: getvwDesktop(24vw);
 						height: getvwDesktop(24vw);
+					}
+					&:hover, &.current{
+						&.spanish{
+							&:after{
+								background-color: $orange;
+								border-radius: 50%;
+								left: -1.4vw;
+								display: block;
+							}
+						}
+						&.english{
+							&:after{
+								background-color: $blue;
+								border-radius: 50%;
+								right: -1.4vw;
+								display: block;
+							}
+						}
 					}
 				}
 
@@ -188,33 +210,6 @@
 					color: $white;
 					text-transform: uppercase;
 					text-align: center;
-				}
-				&.spanish, 
-				&.english{
-					&:after{
-						content: "";
-						position: absolute;
-						display: inline-block;
-						display: none;
-					}
-					&:hover, &.current{
-						&.spanish{
-							&:after{
-								background-color: $orange;
-								border-radius: 50%;
-								left: -1.4vw;
-								display: block;
-							}
-						}
-						&.english{
-							&:after{
-								background-color: $blue;
-								border-radius: 50%;
-								right: -1.4vw;
-								display: block;
-							}
-						}
-					}
 				}
 				&:nth-child(2){
 					position: absolute;
