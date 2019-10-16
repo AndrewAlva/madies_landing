@@ -97,13 +97,8 @@
 					width: getvwDesktop(24vw);
 					border-radius: borderR(24vw) 0 0 borderR(24vw);
 				}
-				&:first-child{
-					z-index: 3;
-				}
 				&:nth-child(2){
 					transform: translateX(50%);
-				}
-				&:nth-child(3){
 				}
 			}
 		}
@@ -191,6 +186,7 @@
 				&:first-child{
 					background-color: $black;
 					transform: translateX(100%);
+					z-index: 3;
 				}
 				&:nth-child(2){
 					background-color: $blue;
