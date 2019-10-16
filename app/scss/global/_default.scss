@@ -2,6 +2,7 @@
 *{
 	@include border-box;
 	font-family: 'NB-L', sans-serif;
+	@include smoothFont;
 }
 
 body{

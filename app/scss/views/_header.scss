@@ -98,20 +98,27 @@
 			flex-direction: row;
 			left: 1.8vw;
 			li{
-				&.language-page{
-					margin:0 0.26041vw;
+				&.language-page a{
 					padding:0.52083vw;
+					cursor: pointer;
 				}
+
 				&.spanish, 
 				&.english{
 					&:after{
 						width: getvwDesktop(24vw);
 						height: getvwDesktop(24vw);
 					}
-
 				}
-				&:nth-child(2){
 
+				&.spanish{
+					margin-right:0.26041vw;
+				}
+				&.english{
+					margin-left:0.26041vw;
+				}
+
+				&:nth-child(2){
 					left: 48%;
 				}
 			}
