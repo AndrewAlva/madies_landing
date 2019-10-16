@@ -20,6 +20,14 @@
 	transition: all $timing cubic-bezier(.3,0,.2,1) $delay;
 }
 
+@mixin trans-ease-delay-transform($timing, $delay){
+	-webkit-transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
+	transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
+	-o-transition: transform $timing cubic-bezier(.3,0,.2,1) $delay;
+	transition: transform $timing cubic-bezier(.3,0,.2,1) $delay;
+	transition: transform $timing cubic-bezier(.3,0,.2,1) $delay, -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
+}
+
 @mixin translate($Xmove, $Ymove){
 	-webkit-transform: translate($Xmove, $Ymove);
 	-moz-transform: translate($Xmove, $Ymove);

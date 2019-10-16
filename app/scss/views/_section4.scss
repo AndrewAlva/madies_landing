@@ -46,11 +46,36 @@
 				.img-wrapper{
 					height: getvw(525vw);
 				}
+
+				.slide{
+					&.prev{
+						// background-color: red;
+						@include translate(-102%, 0);
+
+					}
+					&.next{
+						// background-color: green;
+						@include translate(102%, 0);
+					}
+				}
 			}
+
+			.inner-wrapper{
+				height: getvw(525vw);
+			}
+
 			.fruit-name{
-				bottom: -6vw;
+				width: 100%;
+				height: 7.63334vw;
+				line-height: 7.33334vw;
+				// bottom: -6vw;
+				bottom: -4.03334vw;
 				left: 50%;
 				transform: translateX(-50%);
+
+				.shifting-slide-title{
+					@include translate(0, 110%);
+				}
 			}
 		}
 		.text-wrapper{
@@ -95,6 +120,57 @@
 			overflow: hidden;
 			display: flex;
 			flex-wrap: nowrap;
+
+			.img-wrapper{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			.img-mask-desktop{
+				z-index: 1;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				@include translate(-102%,0);
+				// transition: transform 0s cubic-bezier(.3,0,.2,1) 1.2s;
+				@include trans-ease-delay-transform(0s, 1.2s)
+
+				&:after{
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 100%;
+					height: 100%;
+					background-color: $black;
+					@include translate(0,0);
+					@include transform-origin(left, center);
+					@include transitions-ease(1.2s);
+				}
+
+				img{
+					@include scale(1.3,1.3);
+					@include transitions-ease(1.2s);
+				}
+
+				&.active{
+					z-index: 2;
+					@include translate(0,0);
+					// transition: transform 1.2s cubic-bezier(.3,0,.2,1) 0.5s;
+					@include trans-ease-delay-transform(1.2s, 0.4s)
+
+					&:after{
+						@include translate(-102%,0);
+						@include transitions-ease(0s);
+					}
+
+					img{
+						@include scale(1,1);
+					}
+				}
+			}
 		}
 		// slider
 		.slider-wrapper{
@@ -117,6 +193,16 @@
 			.slides-wrapper{
 				flex-direction: column;
 				.inner-wrapper{
+					height: getvwDesktop(653vw);
+				}
+				.slide{
+					&.prev{
+						@include translate(0, -102%);
+
+					}
+					&.next{
+						@include translate(0, 102%);
+					}
 				}
 				.img-wrapper{
 					padding-left: 1.2vw;
@@ -124,10 +210,18 @@
 				}
 			}
 			.fruit-name{
+				width: getvwDesktop(121vw);
+				height: getvwDesktop(700vw);
 				bottom: 50%;
-				right: -15%;
+				// right: -15%;
+				right: 4.8vw;
 				transform: translateY(50%);
 				writing-mode: vertical-lr;
+
+				.shifting-slide-title{
+					height: 100%;
+					@include translate(-110%, 0);
+				}
 			}
 		}
 		// text
@@ -143,55 +237,99 @@
 }
 // ====================== General Styles =====================
 
-.is-mobile, .is-desktop{
-	section#section4{
-		background: $black;
-		.top-section{
-			display: flex;
-			h2{
-				text-align: right;
-			}
-			.circle-wrapper{
-				.semi-circle{
-					background-color: $green;
-					display: inline-block;
-					position: absolute;
-					left: -7.6vw;
-				}
-				.circle{
-					background-color: $yellow;
-				}
-			}
+
+section#section4{
+	background: $black;
+	.top-section{
+		display: flex;
+		h2{
+			text-align: right;
 		}
-		// slider
-		.slider-wrapper{
-			.controller button.btn{
-				color: $white;
-				text-transform: uppercase;
-			}
-			.slides-wrapper{
-				display: flex;
-				flex-wrap: nowrap;
-				position: relative;
-				.inner-wrapper{
-					overflow: hidden;
-				}
-			}
-			.fruit-name{
-				text-transform: uppercase;
-				text-align: center;
-				z-index: 2;
+		.circle-wrapper{
+			.semi-circle{
+				background-color: $green;
+				display: inline-block;
 				position: absolute;
+				left: -7.6vw;
+			}
+			.circle{
+				background-color: $yellow;
 			}
 		}
-		// text
-		.text-wrapper{
-			&.text-right{
-				padding-bottom: 8.66667vw;
+	}
+	// slider
+	.slider-wrapper{
+		position: relative;
+
+		.controller button.btn{
+			color: $white;
+			text-transform: uppercase;
+		}
+		.slides-wrapper{
+			display: flex;
+			flex-wrap: nowrap;
+			position: relative;
+
+			.inner-wrapper{
+				position: relative;
+				overflow: hidden;
+				width: 100%;
 			}
-			p.p2{
-				text-transform: uppercase;
+
+			.slide{
+				position: absolute;
+				width: 100%;
+				display: none;
+
+				&.active{
+					// background-color: blue;
+					display: block;
+					z-index: 1;
+					@include trans-ease-delay(1.3s, 0.1s);
+					-webkit-transform: none;
+					-moz-transform: none;
+					-ms-transform: none;
+					-o-transform: none;
+					transform: none;
+
+				}
+				
 			}
+		}
+		.fruit-name{
+			text-transform: uppercase;
+			text-align: center;
+			z-index: 2;
+			position: absolute;
+
+			.slider-mask{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.shifting-slide-title{
+				position: absolute;
+				width: 100%;
+				opacity: 0;
+				@include transitions-ease(.8s);
+
+				&.active{
+					@include translate(0,0);
+					opacity: 1;
+					@include trans-ease-delay(.8s, .15s);
+				}
+			}
+		}
+	}
+	// text
+	.text-wrapper{
+		&.text-right{
+			padding-bottom: 8.66667vw;
+		}
+		p.p2{
+			text-transform: uppercase;
 		}
 	}
 }

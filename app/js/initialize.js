@@ -25,4 +25,8 @@ window.onload = function() {
 
     // Animiation frame loop at 60fps to enable "toTop()" function
     RAF.init();
+
+    // Enable slider functionality
+    var FruitsSlider = new Carousel('fruits-slider');
+    FruitsSlider.init();
 }

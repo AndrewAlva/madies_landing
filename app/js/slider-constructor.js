@@ -30,12 +30,16 @@ function Carousel(sliderID, projPrefix){
 	// Set slide titles
 	this.slideTitles = [];
 
+	// Set images for desktop slider
+	this.desktopImages = [];
+
 	// Initiate function
 	this.init = function(){
 		// Get HTML Objects to interact
 		this.getContainer();
 		this.getTriggers();
 		this.getShiftingTitles();
+		this.getBigImages();
 
 		// Init the array of projects images to slide
 		this.slides = this.container.getElementsByClassName('slide');
@@ -113,6 +117,9 @@ function Carousel(sliderID, projPrefix){
 			// Animate the slider titles
 			this.shiftTitles(index);
 
+			// Animate the desktop big images
+			this.shiftBigImages(index);
+
 			// Make a tiny pause (100ms) until the new project is in position
 			setTimeout((function(){
 				// Move the new project into the wrapper
@@ -175,5 +182,21 @@ function Carousel(sliderID, projPrefix){
 
 		// Set active state to the desired title
 		this.slideTitles[index].classList.add('active');
+	}
+
+	// Get big images on desktop slider
+	this.getBigImages = function(){
+		this.desktopImages = document.getElementsByClassName('img-mask-desktop');
+	}
+
+	// Shift between big images on desktop slider
+	this.shiftBigImages = function(index){
+		// Remove active class to all big images
+		for (var i = 0; i < this.desktopImages.length; i++) {
+			this.desktopImages[i].classList.remove('active');
+		}
+
+		// Set active state to the desired big images
+		this.desktopImages[index].classList.add('active');
 	}
 }
