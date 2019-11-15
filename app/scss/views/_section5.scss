@@ -7,12 +7,12 @@
 				padding-right: 1.2vw;
 			}
 			&.second-text{
-				margin-top: 63.3vw;
+				margin-top: 63.5vw;
 			}
 		}
 		.circle-wrapper{
 			&.number-2{
-				top: 9vw;
+				top: 9.3vw;
 				.semi-circle{
 					height: getvw(183vw);
 					width: getvw(363vw);
@@ -26,7 +26,7 @@
 			}
 			&.number-0{
 				right: -24.4vw;
-				top: 41.7vw;
+				top: 41.9vw;
 				span{
 					width: getvw(250.88vw);
 					height: getvw(496.97vw);
@@ -40,7 +40,7 @@
 			}
 		}
 		.img-wrapper{
-			margin-top: -11.8vw;
+			margin-top: -11.5vw;
 			height: getvw(645vw);
 		}
 	}
@@ -129,6 +129,14 @@
 						background-color: $black;
 					}
 				}
+			}
+		}
+
+		.img-wrapper{
+			video{
+				position: absolute;
+				top: 0; left: 0;
+				width: 100%;
 			}
 		}
 	}

@@ -31,16 +31,16 @@ window.onload = function() {
     FruitsSlider.init();
 
     // Humans Credits
-    console.log("Site designed and developed at Mandelbrot Studio®");
-    console.log("https://mandelbrot.mx/");
-    console.log("");
-    console.log("Front-End Development:");
-    console.log("Kenny Celis");
-    console.log("https://www.instagram.com/hey_mr_kenny/");
-    console.log("");
-    console.log("Andrew Alvarado");
-    console.log("https://www.instagram.com/andrew__alva/");
-    console.log("");
-    console.log("UI Design: Zero Morales");
-    console.log("https://www.instagram.com/zero_alex/");
+    // console.log("Site designed and developed at Mandelbrot Studio®");
+    // console.log("https://mandelbrot.mx/");
+    // console.log("");
+    // console.log("Front-End Development:");
+    // console.log("Kenny Celis");
+    // console.log("https://www.instagram.com/hey_mr_kenny/");
+    // console.log("");
+    // console.log("Andrew Alvarado");
+    // console.log("https://www.instagram.com/andrew__alva/");
+    // console.log("");
+    // console.log("UI Design: Zero Morales");
+    // console.log("https://www.instagram.com/zero_alex/");
 }
