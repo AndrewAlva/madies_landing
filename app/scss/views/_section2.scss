@@ -44,12 +44,19 @@
 		background: $blue;
 		.display-wrapper{
 			position: relative;
-			ul{
+			#blind-text-container{
 				width: 100%;
-			}
-			li.dsp1{
-				text-align: center;
-				color: $white;
+
+				li{
+					text-align: center;
+					color: $white;
+					text-transform: uppercase;
+
+					.blind-shifter{
+						font-family: 'Blw';
+						display: block;
+					}
+				}
 			}
 			.img-wrapper{
 				position: absolute;
