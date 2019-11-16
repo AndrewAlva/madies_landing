@@ -170,8 +170,8 @@
 			}
 		}
 		.subtitle{
-			margin-top:7.145vw;
-			padding-left:0.5vw;
+			margin-top: 7.1vw;
+			padding-left: 0.5vw;
 			position: relative;
 			z-index: 3;
 		}
@@ -183,6 +183,15 @@
 			right: $outMargin;
 			bottom: -25.55vw;
 
+		}
+	}
+
+	// Spanish HTML style
+	&.es{
+		section.header{
+			.subtitle{
+				padding-left: 0.8vw;
+			}
 		}
 	}
 }

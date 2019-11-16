@@ -96,14 +96,15 @@
 .is-desktop{
 	section#section4{
 		padding-top: 12vw;
-		padding-bottom: 0.5vw;
+		padding-bottom: 0.4vw;
 		.top-section{
 			.circle-wrapper{
-				transform: translate(-0.7vw, 15.8vw);
+				transform: translate(-0.7vw, 15.7vw);
 				.semi-circle{
 					height: getvwDesktop(108vw);
 					width: getvwDesktop(216vw);
-					top: 1.85vw;
+					top: 1.95vw;
+					left: -7.4vw;
 				}
 				.circle{
 					height: getvwDesktop(287vw);
@@ -114,7 +115,7 @@
 		.slides-wrapper-2{
 			position: absolute;
 			left: $outMargin;
-			top: -9.5vw;
+			top: -9.4vw;
 			width: getvwDesktop(960vw);
 			height: getvwDesktop(1200vw);
 			overflow: hidden;
@@ -175,7 +176,7 @@
 		// slider
 		.slider-wrapper{
 			position: relative;
-			margin-top: 23.1vw;
+			margin-top: 23.05vw;
 			margin-bottom: 16.1vw;
 			.controller{
 				padding-left: 1.855104vw;
@@ -187,7 +188,7 @@
 					display: inherit;
 					margin: 0 auto;
 					&.btn-prev{ margin-bottom: 2.4vw}
-					&.btn-next{ margin-top: 2.4vw}
+					&.btn-next{ margin-top: 2.5vw}
 				}
 			}
 			.slides-wrapper{
@@ -229,7 +230,7 @@
 			display: inline-block;
 			p.p2{
 				&:first-child{
-					margin-bottom: 3.05vw
+					margin-bottom: 2.85vw;
 				}
 			}
 		}

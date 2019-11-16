@@ -103,7 +103,7 @@
 			}
 		}
 		.links-wrapper{
-			margin-bottom: 3.38vw;
+			margin-bottom: 3.41vw;
 			a.links{
 				padding: 0.52083vw;
 				margin-right: 0.3125vw 0; 
@@ -131,7 +131,7 @@
 			}
 			.more-info{
 				padding: 0.52083vw;
-				transform:translateY(-2.8vw);
+				transform: translate(0.14vw, -2.8vw);
 				display: inline-block;
 			}
 		}
@@ -148,7 +148,7 @@
 			h6{
 				padding: 0.625vw;
 				&.madies-inc{
-					padding-left: 0.8vw;
+					padding-left: 0.75vw;
 				}
 				&.date{
 					text-align: right;
@@ -160,6 +160,13 @@
 				padding: 0.625vw;
 				margin-left: 10.8vw;
 			}
+		}
+	}
+
+	// Spanish HTML style
+	&.es{
+		footer#footer .credits h6.date{
+			margin-left: 11.2vw;
 		}
 	}
 }
