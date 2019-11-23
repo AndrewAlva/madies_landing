@@ -30,6 +30,12 @@ window.onload = function() {
     var FruitsSlider = new Carousel('fruits-slider');
     FruitsSlider.init();
 
+    // Section 2 Blinds animation init
+    var ValuesBlinds = new Blinds({
+        containerID: 'blind-text-container'
+    });
+    ValuesBlinds.init();
+
     // Humans Credits
     // console.log("Site designed and developed at Mandelbrot Studio®");
     // console.log("https://mandelbrot.mx/");

@@ -7,6 +7,7 @@
 		.display-wrapper{
 			li.dsp1{
 				line-height: 16.8vw;
+				height: 16.85vw;
 			}
 			.img-wrapper{
 				width: getvw(364vw);
@@ -26,6 +27,7 @@
 		.display-wrapper{
 			li.dsp1{
 				line-height: 10.3vw;
+				height: 10.25vw;
 			}
 			.img-wrapper{
 				width: getvwDesktop(552vw);
@@ -48,6 +50,7 @@
 				width: 100%;
 
 				li{
+					position: relative;
 					text-align: center;
 					color: $white;
 					text-transform: uppercase;

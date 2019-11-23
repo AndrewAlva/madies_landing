@@ -1,0 +1,30 @@
+#blind-text-container{
+	li{
+		&:first-child .blind-shifter{@include trans-ease-delay(.7s, 0s);}
+		&:nth-child(2) .blind-shifter{@include trans-ease-delay(.7s, 0.05s);}
+		&:nth-child(3) .blind-shifter{@include trans-ease-delay(.7s, 0.1s);}
+		&:nth-child(4) .blind-shifter{@include trans-ease-delay(.7s, 0.15s);}
+		&:nth-child(5) .blind-shifter{@include trans-ease-delay(.7s, 0.2s);}
+		&:nth-child(6) .blind-shifter{@include trans-ease-delay(.7s, 0.25s);}
+		&:nth-child(7) .blind-shifter{@include trans-ease-delay(.7s, 0.3s);}
+	}
+
+	.mask{
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.blind-shifter{
+		position: absolute;
+		margin: auto;
+		left: 0; right: 0;
+
+		&.hide{
+			@include translate(0, 102%);
+			opacity: 0;
+		}
+	}
+}

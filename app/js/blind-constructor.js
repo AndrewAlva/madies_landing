@@ -4,71 +4,59 @@ var Blinds = function(args) {
 	var _self = this;
 
 	this.counter = 0;
-	this.transitionTime = 700;
-	this.copys = ["natural", "crunch", "madies"];
-	this.container = document.getElementById('blind-text-container');
-	this.shifters = document.getElementsByClassName('blind-shifter');
+	this.copys = 3;
+	this.transitionTime = 200;
+	this.container = document.getElementById(args.containerID) || document.getElementById('blind-text-container');
+	this.firstShifters = document.getElementsByClassName('first-blind');
+	this.secondShifters = document.getElementsByClassName('second-blind');
+	this.thirdShifters = document.getElementsByClassName('third-blind');
 
-	this.showShifters = function(){
-		for (var i = 0; i < _self.shifters.length; i++) {
-			_self.shifters[i].classList.remove('hide');
+	this.showFirstShifters = function(){
+		for (var i = 0; i < _self.firstShifters.length; i++) {
+			_self.firstShifters[i].classList.remove('hide');
 		}
 	};
+	this.showSecondShifters = function(){
+		for (var i = 0; i < _self.secondShifters.length; i++) {
+			_self.secondShifters[i].classList.remove('hide');
+		}
+	};
+	this.showThirdShifters = function(){
+		for (var i = 0; i < _self.thirdShifters.length; i++) {
+			_self.thirdShifters[i].classList.remove('hide');
+		}
+	};
+
 	this.hideShifters = function(){
-		for (var i = 0; i < _self.shifters.length; i++) {
-			_self.shifters[i].classList.add('hide');
-		}
-	};
-
-	this.updateText = function(){
-		for (var i = 0; i < _self.shifters.length; i++) {
-			_self.shifters[i].innerHTML = _self.copy[_self.counter];
+		for (var i = 0; i < _self.firstShifters.length; i++) {
+			_self.firstShifters[i].classList.add('hide');
+			_self.secondShifters[i].classList.add('hide');
+			_self.thirdShifters[i].classList.add('hide');
 		}
 	};
 
 	this.shift = function(){
 		this.counter += 1;
-		if (this.counter >= this.shifters.length) this.counter = 0;
+		if (this.counter >= this.copys) this.counter = 0;
 
 		this.hideShifters();
+
 		setTimeout(function(){
-			// 
+			switch(_self.counter){
+				case 0:
+					_self.showFirstShifters();
+					break;
+				case 1:
+					_self.showSecondShifters();
+					break;
+				case 2:
+					_self.showThirdShifters();
+					break;
+			}
 		}, this.transitionTime);
 	};
 
-	this.interval = 5000;
-
-	this.firstObjs = $('#include-1').find('.ac-shift').find('span');
-	this.secondObjs = $('#include-2').find('.ac-shift').find('span');
-	this.thirdObjs = $('#include-3').find('.ac-shift').find('span');
-
-	this.toggle = function(objArray, show){
-		$.each(objArray, function(index, el) {
-			setTimeout(function(){
-				if(show){
-					$(el).addClass('show');
-				} else {
-					$(el).removeClass('show');
-				}
-		    }, ( index * 50 ));
-		});
-	};
-
-	this.shift = function(){
-		if (this.counter == 1) {
-			sponsorIncludes.toggle(sponsorIncludes.firstObjs);
-			sponsorIncludes.toggle(sponsorIncludes.secondObjs, true);
-			sponsorIncludes.counter = 2;
-		} else if (this.counter == 2) {
-			sponsorIncludes.toggle(sponsorIncludes.secondObjs);
-			sponsorIncludes.toggle(sponsorIncludes.thirdObjs, true);
-			sponsorIncludes.counter = 3;
-		} else if (this.counter == 3) {
-			sponsorIncludes.toggle(sponsorIncludes.thirdObjs);
-			sponsorIncludes.toggle(sponsorIncludes.firstObjs, true);
-			sponsorIncludes.counter = 1;
-		}
-	};
+	this.interval = 3000;
 
 	this.init = function(){
 		setInterval(function(){
