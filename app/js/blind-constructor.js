@@ -11,6 +11,8 @@ var Blinds = function(args) {
 	this.secondShifters = document.getElementsByClassName('second-blind');
 	this.thirdShifters = document.getElementsByClassName('third-blind');
 
+	this.imgs = document.getElementsByClassName('blind-img');
+
 	this.showFirstShifters = function(){
 		for (var i = 0; i < _self.firstShifters.length; i++) {
 			_self.firstShifters[i].classList.remove('hide');
@@ -33,6 +35,14 @@ var Blinds = function(args) {
 			_self.secondShifters[i].classList.add('hide');
 			_self.thirdShifters[i].classList.add('hide');
 		}
+
+		for (var i = 0; i < _self.imgs.length; i++) {
+			_self.imgs[i].classList.remove('show');
+		}
+	};
+
+	this.showImg = function(index){
+		this.imgs[index].classList.add('show');
 	};
 
 	this.shift = function(){
@@ -40,6 +50,7 @@ var Blinds = function(args) {
 		if (this.counter >= this.copys) this.counter = 0;
 
 		this.hideShifters();
+		this.showImg(this.counter);
 
 		setTimeout(function(){
 			switch(_self.counter){
