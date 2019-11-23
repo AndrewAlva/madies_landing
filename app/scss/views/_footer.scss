@@ -165,8 +165,14 @@
 
 	// Spanish HTML style ======================
 	&.es{
-		footer#footer .credits h6.date{
-			margin-left: 11.2vw;
+		footer#footer {
+			.credits h6.date{
+				margin-left: 11.2vw;
+			}
+
+			.links-wrapper .backTo{
+				margin-left: 21.1vw;
+			}
 		}
 	}
 }
