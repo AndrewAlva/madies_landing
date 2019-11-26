@@ -80,38 +80,17 @@ function Carousel(sliderID, projPrefix){
 			// Turn off the flag to prevent overlapping section transitions
 			this.canScroll = false;
 
-			// Declare variables to define the direction of transition animations
-			var currentProjectMove;
-			var newProjectMove;
-
-			// Detect if user is going to the Next or Prev project, first if check forward move
-			// This is based on index comparison (increasing goes left, decreasing goes right)
-			// if (this.activeProject < index) {
-			// 	currentProjectMove = 'prev';
-			// 	newProjectMove = 'next';
-			// } else if (this.activeProject > index) {
-			// 	currentProjectMove = 'next';
-			// 	newProjectMove = 'prev';
-			// };
-
-			// This is based on the trigger clicked
-			if (direction == 'next') {
-				currentProjectMove = 'prev';
-				newProjectMove = 'next';
-			} else if (direction == 'prev') {
-				currentProjectMove = 'next';
-				newProjectMove = 'prev';
-			};
+			
 
 
 			// Move the current project outside the wrapper
 			var _currentProjectID = this.slidesPrefix + this.activeProject;
 			var _currentProject = document.getElementById(_currentProjectID);
-			_currentProject.classList.add(currentProjectMove);
+			_currentProject.classList.remove('active');
 
 			// Set the new project in position to enter
 			var _upcomingProject = document.getElementById(this.slidesPrefix + index);
-			_upcomingProject.classList.add(newProjectMove);
+
 			_upcomingProject.classList.add('active');
 
 			// Animate the slider titles
@@ -120,21 +99,15 @@ function Carousel(sliderID, projPrefix){
 			// Animate the desktop big images
 			this.shiftBigImages(index);
 
-			// Make a tiny pause (100ms) until the new project is in position
+
+					
+			// Wait until the new project is in position, then disappear the old active project, update the activeProject var and turn on the 'canScroll' flag again
 			setTimeout((function(){
-				// Move the new project into the wrapper
-				_upcomingProject.classList.remove(newProjectMove);
 
-				// Wait until the new project is in position, then disappear the old active project, update the activeProject var and turn on the 'canScroll' flag again
-				setTimeout((function(){
-					_currentProject.classList.remove('active');
-					_currentProject.classList.remove(currentProjectMove);
+				this.setStates(index);
+				this.canScroll = true;
 
-					this.setStates(index);
-					this.canScroll = true;
-
-				}).bind(this), this.duration);
-			}).bind(this), 100);
+			}).bind(this), this.duration);
 		};
 	};
 

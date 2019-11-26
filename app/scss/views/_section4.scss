@@ -44,10 +44,14 @@
 			.slides-wrapper{
 				flex-direction: row;
 				.img-wrapper{
-					height: getvw(525vw);
+					img{
+						height: getvw(525vw);
+					}
 				}
 
 				.slide{
+					height: getvw(525vw);
+
 					&.prev{
 						// background-color: red;
 						@include translate(-102%, 0);
@@ -197,6 +201,9 @@
 					height: getvwDesktop(653vw);
 				}
 				.slide{
+					height: getvwDesktop(653vw);
+					padding-left: 1.2vw;
+
 					&.prev{
 						@include translate(0, -102%);
 
@@ -206,8 +213,11 @@
 					}
 				}
 				.img-wrapper{
-					padding-left: 1.2vw;
-					height: getvwDesktop(653vw);
+					
+					
+					img{
+						height: getvwDesktop(653vw);
+					}
 				}
 			}
 			.fruit-name{
@@ -281,7 +291,6 @@ section#section4{
 			.slide{
 				position: absolute;
 				width: 100%;
-				display: none;
 
 				&.active{
 					// background-color: blue;
@@ -293,9 +302,32 @@ section#section4{
 					-ms-transform: none;
 					-o-transform: none;
 					transform: none;
+					
+					.img-wrapper{
+						bottom: 0;
+						height: 100%;
+						@include transitions-ease(1.3s);
 
+						img{
+							@include scale(1,1);
+						}
+					}
 				}
 				
+			}
+
+			.img-wrapper{
+				position: absolute;
+				width: 100%;
+				height: 0;
+				@include transitions-ease(1.4s);
+
+				img{
+					position: absolute;
+					@include transitions-ease(1.3s);
+					@include transform-origin(bottom, center);
+					@include scale(1.35,1.35);
+				}
 			}
 		}
 		.fruit-name{
