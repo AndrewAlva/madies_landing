@@ -2,6 +2,8 @@
 // has been completely loaded and parsed,
 // without waiting for stylesheets, images, and
 // subframes to finish loading
+var TestSmoothScroll;
+
 document.addEventListener('DOMContentLoaded', function() {
     // Do something
     deviceDetector.init();
@@ -26,6 +28,10 @@ window.onload = function() {
     // Animiation frame loop at 60fps to enable "toTop()" function
     RAF.init();
 
+    // Smooth scrolling
+    TestSmoothScroll = new SmoothScroll();
+    RAF.add(TestSmoothScroll);
+
     // Enable slider functionality
     var FruitsSlider = new Carousel('fruits-slider');
     FruitsSlider.init();
@@ -37,16 +43,16 @@ window.onload = function() {
     ValuesBlinds.init();
 
     // Humans Credits
-    console.log("Site designed and developed at Mandelbrot Studio®");
-    console.log("https://mandelbrot.mx/");
-    console.log("");
-    console.log("UI Design: Zero Morales");
-    console.log("https://www.instagram.com/zero_alex/");
-    console.log("");
-    console.log("Front-End Development:");
-    console.log("Kenny Celis");
-    console.log("https://www.instagram.com/hey_mr_kenny/");
-    console.log("");
-    console.log("Andrew Alvarado");
-    console.log("https://www.instagram.com/andrew__alva/");
+    // console.log("Site designed and developed at Mandelbrot Studio®");
+    // console.log("https://mandelbrot.mx/");
+    // console.log("");
+    // console.log("UI Design: Zero Morales");
+    // console.log("https://www.instagram.com/zero_alex/");
+    // console.log("");
+    // console.log("Front-End Development:");
+    // console.log("Kenny Celis");
+    // console.log("https://www.instagram.com/hey_mr_kenny/");
+    // console.log("");
+    // console.log("Andrew Alvarado");
+    // console.log("https://www.instagram.com/andrew__alva/");
 }

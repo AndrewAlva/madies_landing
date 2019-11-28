@@ -7,7 +7,7 @@
 
 body{
 	color: #fff;
-	background-color: #202020;
+	background-color: $white;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, section, div, nav, ul, li, button{
@@ -70,4 +70,9 @@ ul{
 	img{
 		height: 100%;
 	}
+}
+
+
+.js-scroll-section{
+	position: relative;
 }

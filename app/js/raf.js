@@ -2,6 +2,7 @@ var RAF = {
     els: [],
     add: function(object) {
     	this.els.push(object);
+        object.init();
     },
     remove: function(object) {
     	var idx = this.els.indexOf(object);
