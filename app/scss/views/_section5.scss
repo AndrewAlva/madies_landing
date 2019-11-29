@@ -44,6 +44,15 @@
 			height: getvw(645vw);
 		}
 	}
+
+	// Spanish styling
+	&.es{
+		section#section5{
+			.img-wrapper{
+				margin-top: -3.05vw;
+			}
+		}
+	}
 }
 // ====================== Desktop =====================
 
