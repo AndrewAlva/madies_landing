@@ -1,13 +1,14 @@
 function toTop() {
-	var _scroll = { y: window.scrollY };
-	new TWEEN.Tween( _scroll ).to( {
-		y: 0
+	function getToTop(){
+		var _currentScrollPos = window.scrollY;
+		var _target = _currentScrollPos - 100;
 
-	}, _scroll.y*0.4).easing(
-		TWEEN.Easing.Quintic.Out
+		if (_target <= 0) clearInterval(scrollTopInterval);
 
-	).onUpdate(function(){
-		window.scroll(0, _scroll.y);
+		window.scroll(0, _target);
+	}
 
-	}).start();
+	var scrollTopInterval = setInterval(function(){
+		getToTop();
+	}, 10);
 }

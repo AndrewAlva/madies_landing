@@ -13,7 +13,6 @@ var RAF = {
     },
     animate: function() {
         requestAnimationFrame(RAF.animate);
-        TWEEN.update();
         RAF.render();
     },
     render: function() {
