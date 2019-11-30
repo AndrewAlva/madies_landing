@@ -44,7 +44,7 @@
 				// padding-left: 0.7vw;
 			}
 			.circle-wrapper{
-				@include translate(-0.66vw, -0.55vw);
+				@include translate(-0.66vw, -0.95vw);
 
 				span{
 					&.circle{
@@ -60,7 +60,7 @@
 			}
 		}
 		.subtitle{
-			margin-top:7.74vw;
+			margin-top:7.34vw;
 			margin-bottom: 8.4vw;
 			padding-left: 0.9vw;
 		}
@@ -156,9 +156,7 @@
 			}
 
 			.circle-wrapper{			
-				transform: translateY(-9.7vw);
-				display: flex;
-				justify-content: flex-end;
+				@include translate(-1vw, -9.63vw);
 
 				span{
 					&.circle{
@@ -200,6 +198,7 @@
 		section.header{
 			.subtitle{
 				padding-left: 0.8vw;
+				margin-top: 7vw;
 			}
 		}
 	}
@@ -246,11 +245,19 @@
 		}
 
 		.title-wrapper{
-			display: flex;
-			flex-direction: row;
-			align-items: flex-end;
+			// display: flex;
+			// flex-direction: row;
+			// align-items: flex-end;
+			position: relative;
+
+			.main-title-wrap{
+				position: relative;
+				display: inline-block;
+			}
 
 			.circle-wrapper{
+				display: inline-block;
+
 				span{
 					display: inline-block;
 
@@ -261,6 +268,7 @@
 
 					&.semi-circle{
 						background-color: $green;
+						@include scale(2,2);
 					}
 				}
 			}
