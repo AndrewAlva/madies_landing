@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@mixin content-box{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
 @mixin transitions-ease($timing){
 	-webkit-transition: all $timing cubic-bezier(.3,0,.2,1);
 	-moz-transition: all $timing cubic-bezier(.3,0,.2,1);
@@ -36,6 +42,12 @@
 	transform: translate($Xmove, $Ymove);
 }
 
+@mixin translate3d($Xmove, $Ymove, $Zmove){
+	-webkit-transform: translate3d($Xmove, $Ymove, $Zmove);
+	-moz-transform: translate3d($Xmove, $Ymove, $Zmove);
+	transform: translate3d($Xmove, $Ymove, $Zmove);
+}
+
 @mixin rotate($degs){
 	-webkit-transform: -webkit-rotate($degs);
 	-webkit-transform: rotate($degs);
@@ -60,6 +72,15 @@
 	-ms-transform: scale($X, $Y);
 	-o-transform: scale($X, $Y);
 	transform: scale($X, $Y);
+}
+
+@mixin scale-rotate($Xscale, $Yscale, $degs){
+	-webkit-transform: -webkit-scale($Xscale, $Yscale) -webkit-rotate($degs);
+	-webkit-transform: scale($Xscale, $Yscale) rotate($degs);
+	-moz-transform: scale($Xscale, $Yscale) rotate($degs);
+	-ms-transform: scale($Xscale, $Yscale) rotate($degs);
+	-o-transform: scale($Xscale, $Yscale) rotate($degs);
+	transform: scale($Xscale, $Yscale) rotate($degs);
 }
 
 @mixin transform-origin($X, $Y){
@@ -161,6 +182,14 @@
 	-ms-flex-wrap: nowrap;
 		flex-wrap: nowrap;
 }
+
+@mixin ani-name($name){
+	-webkit-animation-name: $name;
+	-moz-animation-name: $name;
+	-o-animation-name: $name;
+	animation-name: $name;
+}
+
 
 // function
 @function getvw($value){

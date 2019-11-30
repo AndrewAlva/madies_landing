@@ -4,10 +4,22 @@ block content
 		.desktop-grid.mobile-grid
 			include _nav-header.jade
 			.title-wrapper
-				h1.h1.offset-2.col-15.offset-lg-2.col-lg-13 Crunchy Fruit Snack —
+				.offset-2.col-15.offset-lg-2.col-lg-13
+					h1.h1.cascade-mask
+						span.mbrt-cascade.firstload.animate(data-cascade="fade-up" data-cascade-delay="0" data-cascade-delay-mobile="0") Crunchy Fruit
+
+					h1.h1.cascade-mask
+						span.mbrt-cascade.firstload.animate(data-cascade="fade-up" data-cascade-delay="1" data-cascade-delay-mobile="1") Snack —
+
+
 				.circle-wrapper.offset-2.offset-lg-3.col-lg-4
-					span.circle
-					span.semi-circle.radius-left
-			h1.subtitle.h1.offset-4.col-14.offset-lg-4 Just Like That
-			.img-wrapper
-				img(src="img/Madies_Foto_01.jpg", alt="Madies: Lyophilized mangos")
+					span.mbrt-cascade.firstload.animate(data-cascade="scale-up-full" data-cascade-delay="5" data-cascade-delay-mobile="5").circle
+					span.mbrt-cascade.firstload.animate(data-cascade="scale-up-full-rotate" data-cascade-delay="5" data-cascade-delay-mobile="5").semi-circle.radius-left
+
+
+			h1.subtitle.h1.offset-4.col-14.offset-lg-4.cascade-mask
+				span.mbrt-cascade.firstload.animate(data-cascade="fade-up" data-cascade-delay="3" data-cascade-delay-mobile="3") Just Like That
+
+
+			.img-wrapper.mbrt-cascade.firstload.animate(data-cascade="header-img-mask" data-cascade-delay="1" data-cascade-delay-mobile="1")
+				img.mbrt-cascade.firstload.animate(data-cascade="scale-down" data-cascade-delay="1" data-cascade-delay-mobile="1")(src="img/Madies_Foto_01.jpg", alt="Madies: Lyophilized mangos")

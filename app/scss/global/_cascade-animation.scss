@@ -1,0 +1,377 @@
+/* mbrt. Cascade Styling */
+
+/////// Variables
+	$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+	$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+	$suzeEase: cubic-bezier(.3,0,.2,1);
+	$cascade_trans_duration: 1200ms;
+	$cascade_interval: 200ms;
+	$preloader_trans_duration: 500ms;
+	$cascade_firstload_mobile: 1000ms;
+	$cascade_firstload_desktop: 700ms;
+
+
+/////// Animaciones hechas con CSS @keyframes
+	@keyframes fade-up {
+		0%		{
+			@include translate3d(0, 120%, 0);
+		}
+		
+		100%	{
+			@include translate3d(0,0,0);
+		}
+	}
+	@keyframes header-img-mask {
+		0%		{
+			width: 0;
+		}
+		
+		100%	{
+			width: getvw(620vw);
+		}
+	}
+	@keyframes header-img-mask-desk {
+		0%		{
+			width: 0;
+		}
+		
+		100%	{
+			width: getvwDesktop(804vw);
+		}
+	}
+	@keyframes scale-down {
+		0%		{
+			@include scale(1.5,1.5);
+		}
+		
+		100%	{
+			@include scale(1,1);
+		}
+	}
+	@keyframes scale-up-full {
+		0%		{
+			@include scale(0,0);
+		}
+		
+		100%	{
+			@include scale(1,1);
+		}
+	}
+	@keyframes scale-up-full-rotate {
+		0%		{
+			@include scale-rotate(0,0, 180deg);
+		}
+		
+		100%	{
+			@include scale-rotate(1,1, 0deg);
+		}
+	}
+
+
+	@keyframes slide-up {
+		0%		{
+			@include translate3d(0, 40px, 0);
+			opacity: 0;
+		}
+		
+		100%	{
+			@include translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@keyframes slide-up-long {
+		0%		{
+			@include translate3d(0, 80px, 0);
+			opacity: 0;
+		}
+		
+		100%	{
+			@include translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@keyframes stretch-up {
+		0%   {
+			-webkit-transform: scaleY(1.2) translate3d(0, 40px, 0);
+			-moz-transform: scaleY(1.2) translate3d(0, 40px, 0);
+			transform: scaleY(1.2) translate3d(0, 40px, 0);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: scaleY(1) translate3d(0,0,0);
+			-moz-transform: scaleY(1) translate3d(0,0,0);
+			transform: scaleY(1) translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+
+
+/////// Estilos
+
+// Configuración general
+.cascade-mask {
+	position: relative;
+	vertical-align: top;
+	overflow: hidden;
+	padding-bottom: .2em;
+	line-height: .8em;
+		// color: red;
+
+	&.padded-r {
+		padding-right: 15px;
+		// padding-bottom: 15px;
+		@include content-box;
+	}
+}
+
+[data-cascade]{
+	display: block;
+	animation-duration: $cascade_trans_duration;
+	animation-timing-function: $easeOutCubic;
+	animation-fill-mode: both;
+}
+
+
+[data-cascade="fade-up"].animate{
+	@include ani-name(fade-up);
+}
+.is-mobile [data-cascade="header-img-mask"].animate{
+	@include ani-name(header-img-mask);
+}
+.is-desktop [data-cascade="header-img-mask"].animate{
+	@include ani-name(header-img-mask-desk);
+}
+[data-cascade="scale-down"].animate{
+	@include ani-name(scale-down);
+}
+[data-cascade="scale-up-full"].animate{
+	@include ani-name(scale-up-full);
+}
+[data-cascade="scale-up-full-rotate"].animate{
+	@include ani-name(scale-up-full-rotate);
+}
+
+
+
+[data-cascade="slide-up"]{opacity: 0;}
+[data-cascade="slide-up"].animate{
+	opacity: 1;
+	@include ani-name(slide-up);
+}
+[data-cascade="slide-up-long"]{opacity: 0;}
+[data-cascade="slide-up-long"].animate{
+	opacity: 1;
+	@include ani-name(slide-up-long);
+}
+[data-cascade="stretch-up"]{opacity: 0;}
+[data-cascade="stretch-up"].animate{
+	@include transform-origin(top, left);
+	opacity: 1;
+	@include ani-name(stretch-up);
+}
+
+
+
+
+.is-mobile {
+	[data-cascade-delay-mobile="0"]{animation-delay: $cascade_interval * 0;}
+	[data-cascade-delay-mobile="1"]{animation-delay: $cascade_interval * 1;}
+	[data-cascade-delay-mobile="2"]{animation-delay: $cascade_interval * 2;}
+	[data-cascade-delay-mobile="3"]{animation-delay: $cascade_interval * 3;}
+	[data-cascade-delay-mobile="4"]{animation-delay: $cascade_interval * 4;}
+	[data-cascade-delay-mobile="5"]{animation-delay: $cascade_interval * 5;}
+	[data-cascade-delay-mobile="6"]{animation-delay: $cascade_interval * 6;}
+	[data-cascade-delay-mobile="7"]{animation-delay: $cascade_interval * 7;}
+	[data-cascade-delay-mobile="8"]{animation-delay: $cascade_interval * 8;}
+	[data-cascade-delay-mobile="9"]{animation-delay: $cascade_interval * 9;}
+	[data-cascade-delay-mobile="10"]{animation-delay: $cascade_interval * 10;}
+	[data-cascade-delay-mobile="11"]{animation-delay: $cascade_interval * 11;}
+	[data-cascade-delay-mobile="12"]{animation-delay: $cascade_interval * 12;}
+	[data-cascade-delay-mobile="13"]{animation-delay: $cascade_interval * 13;}
+	[data-cascade-delay-mobile="14"]{animation-delay: $cascade_interval * 14;}
+	[data-cascade-delay-mobile="15"]{animation-delay: $cascade_interval * 15;}
+	[data-cascade-delay-mobile="16"]{animation-delay: $cascade_interval * 16;}
+	[data-cascade-delay-mobile="17"]{animation-delay: $cascade_interval * 17;}
+	[data-cascade-delay-mobile="18"]{animation-delay: $cascade_interval * 18;}
+	[data-cascade-delay-mobile="19"]{animation-delay: $cascade_interval * 19;}
+	[data-cascade-delay-mobile="20"]{animation-delay: $cascade_interval * 20;}
+	[data-cascade-delay-mobile="21"]{animation-delay: $cascade_interval * 21;}
+	[data-cascade-delay-mobile="22"]{animation-delay: $cascade_interval * 22;}
+	[data-cascade-delay-mobile="23"]{animation-delay: $cascade_interval * 23;}
+	
+	[data-cascade-delay-mobile="0"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 0);}
+	}
+	[data-cascade-delay-mobile="1"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 1);}
+	}
+	[data-cascade-delay-mobile="2"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 2);}
+	}
+	[data-cascade-delay-mobile="3"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 3);}
+	}
+	[data-cascade-delay-mobile="4"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 4);}
+	}
+	[data-cascade-delay-mobile="5"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 5);}
+	}
+	[data-cascade-delay-mobile="6"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 6);}
+	}
+	[data-cascade-delay-mobile="7"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 7);}
+	}
+	[data-cascade-delay-mobile="8"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 8);}
+	}
+	[data-cascade-delay-mobile="9"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 9);}
+	}
+	[data-cascade-delay-mobile="10"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 10);}
+	}
+	[data-cascade-delay-mobile="11"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 11);}
+	}
+	[data-cascade-delay-mobile="12"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 12);}
+	}
+	[data-cascade-delay-mobile="13"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 13);}
+	}
+	[data-cascade-delay-mobile="14"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 14);}
+	}
+	[data-cascade-delay-mobile="15"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 15);}
+	}
+	[data-cascade-delay-mobile="16"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 16);}
+	}
+	[data-cascade-delay-mobile="17"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 17);}
+	}
+	[data-cascade-delay-mobile="18"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 18);}
+	}
+	[data-cascade-delay-mobile="19"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 19);}
+	}
+	[data-cascade-delay-mobile="20"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 20);}
+	}
+	[data-cascade-delay-mobile="21"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 21);}
+	}
+	[data-cascade-delay-mobile="22"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 22);}
+	}
+	[data-cascade-delay-mobile="23"]{
+		&.firstload-mobile, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 23);}
+	}
+}
+
+
+.is-desktop {
+	[data-cascade-delay="0"]{animation-delay: $cascade_interval * 0;}
+	[data-cascade-delay="1"]{animation-delay: $cascade_interval * 1;}
+	[data-cascade-delay="2"]{animation-delay: $cascade_interval * 2;}
+	[data-cascade-delay="3"]{animation-delay: $cascade_interval * 3;}
+	[data-cascade-delay="4"]{animation-delay: $cascade_interval * 4;}
+	[data-cascade-delay="5"]{animation-delay: $cascade_interval * 5;}
+	[data-cascade-delay="6"]{animation-delay: $cascade_interval * 6;}
+	[data-cascade-delay="7"]{animation-delay: $cascade_interval * 7;}
+	[data-cascade-delay="8"]{animation-delay: $cascade_interval * 8;}
+	[data-cascade-delay="9"]{animation-delay: $cascade_interval * 9;}
+	[data-cascade-delay="10"]{animation-delay: $cascade_interval * 10;}
+	[data-cascade-delay="11"]{animation-delay: $cascade_interval * 11;}
+	[data-cascade-delay="12"]{animation-delay: $cascade_interval * 12;}
+	[data-cascade-delay="13"]{animation-delay: $cascade_interval * 13;}
+	[data-cascade-delay="14"]{animation-delay: $cascade_interval * 14;}
+	[data-cascade-delay="15"]{animation-delay: $cascade_interval * 15;}
+	[data-cascade-delay="16"]{animation-delay: $cascade_interval * 16;}
+	[data-cascade-delay="17"]{animation-delay: $cascade_interval * 17;}
+	[data-cascade-delay="18"]{animation-delay: $cascade_interval * 18;}
+	[data-cascade-delay="19"]{animation-delay: $cascade_interval * 19;}
+	[data-cascade-delay="20"]{animation-delay: $cascade_interval * 20;}
+	[data-cascade-delay="21"]{animation-delay: $cascade_interval * 21;}
+	[data-cascade-delay="22"]{animation-delay: $cascade_interval * 22;}
+	[data-cascade-delay="23"]{animation-delay: $cascade_interval * 23;}
+	
+	[data-cascade-delay="0"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 0);}
+	}
+	[data-cascade-delay="1"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 1);}
+	}
+	[data-cascade-delay="2"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 2);}
+	}
+	[data-cascade-delay="3"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 3);}
+	}
+	[data-cascade-delay="4"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 4);}
+	}
+	[data-cascade-delay="5"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 5);}
+	}
+	[data-cascade-delay="6"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 6);}
+	}
+	[data-cascade-delay="7"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 7);}
+	}
+	[data-cascade-delay="8"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 8);}
+	}
+	[data-cascade-delay="9"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 9);}
+	}
+	[data-cascade-delay="10"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 10);}
+	}
+	[data-cascade-delay="11"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 11);}
+	}
+	[data-cascade-delay="12"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 12);}
+	}
+	[data-cascade-delay="13"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 13);}
+	}
+	[data-cascade-delay="14"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 14);}
+	}
+	[data-cascade-delay="15"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 15);}
+	}
+	[data-cascade-delay="16"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 16);}
+	}
+	[data-cascade-delay="17"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 17);}
+	}
+	[data-cascade-delay="18"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 18);}
+	}
+	[data-cascade-delay="19"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 19);}
+	}
+	[data-cascade-delay="20"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 20);}
+	}
+	[data-cascade-delay="21"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 21);}
+	}
+	[data-cascade-delay="22"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 22);}
+	}
+	[data-cascade-delay="23"]{
+		&.firstload-desk, &.firstload{animation-delay: $preloader_trans_duration + ($cascade_interval * 23);}
+	}
+}
+

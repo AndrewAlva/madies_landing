@@ -2,7 +2,7 @@
 .is-mobile{
 	nav.nav-section{
 		padding-top: 2.1vw;
-		margin-bottom: 5.18vw;
+		margin-bottom: 6.18vw;
 		justify-content: space-between;
 		.logo-wrapper{
 			img{
@@ -41,10 +41,11 @@
 		.title-wrapper{
 		
 			h1.h1{
-				padding-left: 0.7vw;
+				// padding-left: 0.7vw;
 			}
 			.circle-wrapper{
-				transform: translate(-0.66vw, 0.45vw);
+				@include translate(-0.66vw, -0.55vw);
+
 				span{
 					&.circle{
 						
@@ -60,7 +61,7 @@
 		}
 		.subtitle{
 			margin-top:7.74vw;
-			
+			margin-bottom: 8.4vw;
 			padding-left: 0.9vw;
 		}
 		.img-wrapper{
@@ -76,14 +77,15 @@
 // 	======================Desktop======================
 .is-desktop{
 	nav.nav-section{
-		margin-bottom: 4.49vw;
+		margin-bottom: 5.29vw;
 		padding-top: 3.5vw;
+
 		.logo-wrapper{
 			img{
-	
 				width: 7.8vw;
 			}
 		}
+
 		p.phrase{
 			display: block;
 			font-size: 1.66667vw;
@@ -150,12 +152,14 @@
 		height: getvwDesktop(1080vw);
 		.title-wrapper{
 			h1.h1{
-				padding-left: 0.6vw;
+				// padding-left: 0.6vw;
 			}
+
 			.circle-wrapper{			
-				transform: translateY(-8.8vw);
+				transform: translateY(-9.7vw);
 				display: flex;
 				justify-content: flex-end;
+
 				span{
 					&.circle{
 					
@@ -171,6 +175,7 @@
 		}
 		.subtitle{
 			margin-top: 7.1vw;
+			margin-bottom: 9.4vw;
 			padding-left: 0.5vw;
 			position: relative;
 			z-index: 3;
@@ -182,7 +187,11 @@
 			position: absolute;
 			right: $outMargin;
 			bottom: -25.55vw;
-
+			
+			img{
+				position: absolute;
+				bottom: 0; right: 0;
+			}
 		}
 	}
 
@@ -231,6 +240,11 @@
 	section.header{
 		background-color: $black;
 		position: relative;
+
+		.h1{
+			span{font-family: inherit;}
+		}
+
 		.title-wrapper{
 			display: flex;
 			flex-direction: row;
@@ -239,17 +253,21 @@
 			.circle-wrapper{
 				span{
 					display: inline-block;
+
 					&.circle{
 						background-color: $yellow;
+						@include transform-origin(bottom, center);
 					}
+
 					&.semi-circle{
 						background-color: $green;
 					}
 				}
 			}
 		}
-		.subtitle{
-			margin-bottom: 9.4vw;
+
+		.img-wrapper{
+			img{@include transform-origin(left, bottom);}
 		}
 	}
 }
