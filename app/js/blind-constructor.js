@@ -3,6 +3,7 @@ var Blinds = function(args) {
 
 	var _self = this;
 
+	this.switch = null;
 	this.counter = 0;
 	this.copys = 3;
 	this.transitionTime = 200;
@@ -70,8 +71,12 @@ var Blinds = function(args) {
 	this.interval = 3000;
 
 	this.init = function(){
-		setInterval(function(){
+		this.switch = setInterval(function(){
 			_self.shift();
 		}, this.interval);
+	}
+
+	this.stop = function(){
+		clearInterval(_self.switch);
 	}
 }

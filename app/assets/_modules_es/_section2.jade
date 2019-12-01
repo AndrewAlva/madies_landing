@@ -1,7 +1,7 @@
 section#section2
 	.desktop-grid.mobile-grid
 		.display-wrapper
-			ul#blind-text-container
+			ul#blind-text-container.mbrt-cascade
 				li.dsp1
 					.mask 
 						span.blind-shifter.first-blind natural
@@ -28,13 +28,16 @@ section#section2
 						span.blind-shifter.second-blind.hide crunch
 						span.blind-shifter.third-blind.hide madies
 
-			.img-wrapper
-				.img-mask.blind-img.first-blind-img.show
-					img(src="../img/Madies_Foto_04.jpg", alt="Bodegón de mangos sobre papel")
 
-				.img-mask.blind-img.second-blind-img
-					img(src="../img/Madies_Foto_05.jpg", alt="Madies sueltos sin empaque")
+			.img-wrapper.mbrt-cascade
+				.inner-wrap
+					.scale-wrap
+						.img-mask.blind-img.first-blind-img.show
+							img(src="../img/Madies_Foto_04.jpg", alt="Bodegón de mangos sobre papel")
 
-				.img-mask.blind-img.third-blind-img
-					img(src="../img/Madies_Foto_06.jpg", alt="Bodegón del empaque con mangos")
+						.img-mask.blind-img.second-blind-img
+							img(src="../img/Madies_Foto_05.jpg", alt="Madies sueltos sin empaque")
+
+						.img-mask.blind-img.third-blind-img
+							img(src="../img/Madies_Foto_06.jpg", alt="Bodegón del empaque con mangos")
 
