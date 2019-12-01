@@ -39,13 +39,14 @@
 	}
 	section.header{
 		height: 136vw;
-		.title-wrapper{
-		
+
+		.title-wrapper{		
 			h1.h1{
 				// padding-left: 0.7vw;
 			}
+
 			.circle-wrapper{
-				@include translate(-0.66vw, -0.95vw);
+				@include translate(-0.66vw, 1.5vw);
 
 				span{
 					&.circle{
@@ -61,7 +62,7 @@
 			}
 		}
 		.subtitle{
-			margin-top:7.34vw;
+			margin-top: 7.54vw;
 			margin-bottom: 8.4vw;
 			padding-left: 0.9vw;
 		}

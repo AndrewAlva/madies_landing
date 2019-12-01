@@ -26,6 +26,14 @@
 	transition: all $timing cubic-bezier(.3,0,.2,1) $delay;
 }
 
+@mixin trans-customease-delay($timing, $ease, $delay){
+	-webkit-transition: all $timing $ease $delay;
+	-moz-transition: all $timing $ease $delay;
+	-ms-transition: all $timing $ease $delay;
+	-o-transition: all $timing $ease $delay;
+	transition: all $timing $ease $delay;
+}
+
 @mixin trans-ease-delay-transform($timing, $delay){
 	-webkit-transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
 	transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;

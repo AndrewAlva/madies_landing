@@ -21,6 +21,7 @@
 			@include translate3d(0, 0%, 0);
 		}
 	}
+
 	@keyframes header-img-mask {
 		0%		{
 			width: 0;
@@ -39,6 +40,7 @@
 			width: getvwDesktop(804vw);
 		}
 	}
+
 	@keyframes scale-down {
 		0%		{
 			@include scale(1.5,1.5);
@@ -48,6 +50,7 @@
 			@include scale(1,1);
 		}
 	}
+
 	@keyframes scale-up-full {
 		0%		{
 			@include scale(0,0);
@@ -67,44 +70,25 @@
 		}
 	}
 
-
-	@keyframes slide-up {
+	@keyframes sec_one-up {
 		0%		{
-			@include translate3d(0, 40px, 0);
-			opacity: 0;
+			@include translate3d(0, 25vw, 0);
 		}
 		
 		100%	{
-			@include translate3d(0,0,0);
-			opacity: 1;
+			@include translate3d(0, 0vw, 0);
 		}
 	}
-	@keyframes slide-up-long {
+	@keyframes sec_one-up-desk {
 		0%		{
-			@include translate3d(0, 80px, 0);
-			opacity: 0;
+			@include translate3d(0, 10vw, 0);
 		}
 		
 		100%	{
-			@include translate3d(0,0,0);
-			opacity: 1;
+			@include translate3d(0, 0vw, 0);
 		}
 	}
-	@keyframes stretch-up {
-		0%   {
-			-webkit-transform: scaleY(1.2) translate3d(0, 40px, 0);
-			-moz-transform: scaleY(1.2) translate3d(0, 40px, 0);
-			transform: scaleY(1.2) translate3d(0, 40px, 0);
-			opacity: 0;
-		}
 
-		100% {
-			-webkit-transform: scaleY(1) translate3d(0,0,0);
-			-moz-transform: scaleY(1) translate3d(0,0,0);
-			transform: scaleY(1) translate3d(0,0,0);
-			opacity: 1;
-		}
-	}
 
 
 /////// Estilos
@@ -124,6 +108,10 @@
 		// padding-bottom: 15px;
 		@include content-box;
 	}
+
+	&.extra-b-pad{
+		padding-bottom: .4em;
+	}
 }
 
 [data-cascade]{
@@ -134,7 +122,9 @@
 }
 
 
+[data-cascade="fade-up"]{opacity: 0;}
 [data-cascade="fade-up"].animate{
+	opacity: 1;
 	@include ani-name(fade-up);
 }
 .is-mobile [data-cascade="header-img-mask"].animate{
@@ -152,25 +142,12 @@
 [data-cascade="scale-up-full-rotate"].animate{
 	@include ani-name(scale-up-full-rotate);
 }
-
-
-
-[data-cascade="slide-up"]{opacity: 0;}
-[data-cascade="slide-up"].animate{
+[data-cascade="sec_one-up"]{opacity: 0;}
+[data-cascade="sec_one-up"].animate{
 	opacity: 1;
-	@include ani-name(slide-up);
 }
-[data-cascade="slide-up-long"]{opacity: 0;}
-[data-cascade="slide-up-long"].animate{
-	opacity: 1;
-	@include ani-name(slide-up-long);
-}
-[data-cascade="stretch-up"]{opacity: 0;}
-[data-cascade="stretch-up"].animate{
-	@include transform-origin(top, left);
-	opacity: 1;
-	@include ani-name(stretch-up);
-}
+.is-mobile [data-cascade="sec_one-up"].animate{@include ani-name(sec_one-up);}
+.is-desktop [data-cascade="sec_one-up"].animate{@include ani-name(sec_one-up-desk);}
 
 
 
