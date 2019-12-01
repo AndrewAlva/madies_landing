@@ -25,6 +25,18 @@ window.onload = function() {
     // console.log("Page fully loaded.");
     // console.log("Initialize.js");
 
+    // General inview animation, linked with "Cascading" system
+    var inviewObjects = document.getElementsByClassName('mbrt-cascade');
+    for (var i = 0; i < inviewObjects.length; i++) {
+        var inview = InView(inviewObjects[i], function(isInView, data) {
+            if ((this.el.getBoundingClientRect().top - window.innerHeight) > 0) {
+                this.el.classList.remove('animate');
+            } else {
+                this.el.classList.add('animate');
+            }
+        })
+    }
+
     // Animiation frame loop at 60fps to enable "toTop()" function
     RAF.init();
 

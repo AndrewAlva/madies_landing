@@ -190,6 +190,29 @@
 	animation-name: $name;
 }
 
+@mixin ani-duration($duration){
+	-webkit-animation-duration: $duration;
+	-moz-animation-duration: $duration;
+	-o-animation-duration: $duration;
+	animation-duration: $duration;
+}
+
+@mixin ani-ease($ease){
+
+	-webkit-animation-timing-function: $ease;
+	-moz-animation-timing-function: $ease;
+	-o-animation-timing-function: $ease;
+	animation-timing-function: $ease;
+}
+
+@mixin ani-fillmode($mode){
+
+	-webkit-animation-fill-mode: $mode;
+	-moz-animation-fill-mode: $mode;
+	-o-animation-fill-mode: $mode;
+	animation-fill-mode: $mode;
+}
+
 
 // function
 @function getvw($value){

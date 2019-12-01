@@ -4,6 +4,7 @@
 		padding-top: 2.1vw;
 		margin-bottom: 6.18vw;
 		justify-content: space-between;
+
 		.logo-wrapper{
 			img{
 				width: 18.6vw;
@@ -268,7 +269,6 @@
 
 					&.semi-circle{
 						background-color: $green;
-						@include scale(2,2);
 					}
 				}
 			}

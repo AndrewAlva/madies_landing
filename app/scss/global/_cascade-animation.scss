@@ -112,6 +112,7 @@
 // Configuración general
 .cascade-mask {
 	position: relative;
+	display: block;
 	vertical-align: top;
 	overflow: hidden;
 	padding-bottom: .2em;
@@ -127,9 +128,9 @@
 
 [data-cascade]{
 	display: block;
-	animation-duration: $cascade_trans_duration;
-	animation-timing-function: $easeOutCubic;
-	animation-fill-mode: both;
+	@include ani-duration($cascade_trans_duration);
+	@include ani-ease($easeOutCubic);
+	@include ani-fillmode(both);
 }
 
 
