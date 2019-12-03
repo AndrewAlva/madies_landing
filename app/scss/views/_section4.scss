@@ -2,16 +2,15 @@
 .is-mobile{
 	section#section4{
 		padding-top: 36.2vw;
-		padding-bottom: 8.2vw;
+		
 		.top-section{
 			.copy-wrap{
+				margin-top: .3vw;
+
 				.h2{
+					padding-right: .3vw;
 					@include translate3d(0, 30vw, 0);
 				}
-			}
-
-			h2{
-				padding-right: 1.1vw;
 			}
 
 			.circle-wrapper{
@@ -35,7 +34,8 @@
 		.slider-wrapper{
 			display: flex;
 			margin-top: 12vw;
-			margin-bottom: 15vw;
+			margin-bottom: 14.8vw;
+
 			.controller{
 				display: flex;
 				flex-direction: column;
@@ -77,6 +77,10 @@
 
 			.inner-wrapper{
 				height: getvw(525vw);
+			}
+
+			.inview-mask{
+				@include translate3d(0, 45vw, 0);
 			}
 
 			.fruit-name{
@@ -138,6 +142,10 @@
 				}
 			}
 		}
+
+		.paragraphs-container{
+			padding-bottom: 8.2vw;
+		}
 	}
 }
 
@@ -146,7 +154,6 @@
 .is-desktop{
 	section#section4{
 		padding-top: 12vw;
-		padding-bottom: 0.4vw;
 
 		.top-section{
 			.copy-wrap{
@@ -189,16 +196,18 @@
 
 			.inview-mask{
 				position: relative;
-				width: 0;
+				width: 100%;
 				height: 100%;
 				overflow: hidden;
+				@include translate3d(-102%, 0, 0);
 			}
 
 			.inview-scale{
 				position: relative;
 				width: 100%;
 				height: 100%;
-				@include scale(1.8,1.8);
+				@include scale(1.6,1.6);
+				@include transform-origin(center, center);
 			}
 
 			.img-mask-desktop{
@@ -250,7 +259,7 @@
 			&.animate{
 				.inview-mask{
 					@include trans-customease-delay(1.6s, $easeOutCubic, .3s);
-					width: 100%;
+					@include translate3d(0,0,0);
 				}
 
 				.inview-scale{
@@ -286,6 +295,10 @@
 				.inner-wrapper{
 					height: getvwDesktop(653vw);
 					padding-left: 1.2vw;
+				}
+
+				.inview-mask{
+					@include translate3d(0, 60vw, 0);
 				}
 
 				.slide{
@@ -363,6 +376,10 @@
 					margin-bottom: 2.85vw;
 				}
 			}
+		}
+
+		.paragraphs-container{
+			padding-bottom: 0.4vw;
 		}
 	}
 }
@@ -461,7 +478,6 @@ section#section4{
 				width: 100%;
 				height: 100%;
 				overflow: hidden;
-				@include translate3d(0, 50vw, 0);
 			}
 
 			.inview-scale{
@@ -555,20 +571,23 @@ section#section4{
 
 	// Text Inview animations
 	.paragraphs-container{
+		position: relative;
+		background-color: $black;
+
 		.text-wrapper{
-			&:nth-child(1){
+			&:nth-child(1) .inview-translate{
 				@include translate3d(0,20vw,0);
 			}
-			&:nth-child(2){
+			&:nth-child(2) .inview-translate{
 				@include translate3d(0,28vw,0);
 			}
-		}
 
-		&.animate{
-			.text-wrapper{
+			&.animate{
 				&:nth-child(1), &:nth-child(2){
-					@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
-					@include translate3d(0,0,0);
+					.inview-translate{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+						@include translate3d(0,0,0);
+					}
 				}
 			}
 		}
