@@ -89,6 +89,16 @@
 		}
 	}
 
+	@keyframes intro-left {
+		0%		{
+			@include translate3d(-102%, 0, 0);
+		}
+		
+		100%	{
+			@include translate3d(0, 0, 0);
+		}
+	}
+
 
 
 /////// Estilos
@@ -148,6 +158,13 @@
 }
 .is-mobile [data-cascade="sec_one-up"].animate{@include ani-name(sec_one-up);}
 .is-desktop [data-cascade="sec_one-up"].animate{@include ani-name(sec_one-up-desk);}
+
+[data-cascade="intro-left"]{opacity: 0;}
+[data-cascade="intro-left"].animate{
+	opacity: 1;
+	@include ani-name(intro-left);
+	@include ani-duration(.75s);
+}
 
 
 

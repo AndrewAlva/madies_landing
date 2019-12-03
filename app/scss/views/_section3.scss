@@ -6,10 +6,14 @@
 		p.p1{
 			line-height: 5.799999vw;
 			margin-bottom: 7.1vw;
+
+			span{
+				@include translate3d(0, 25vw, 0);
+			}
 		}
 		.bottom-section{
 			.circle-wrapper{
-				span.semi-circle{
+				.figure-wrap{
 					width: getvw(47vw);
 					height: getvw(94vw);
 				}
@@ -20,22 +24,31 @@
 		}
 	}
 }
+
+
 // ====================== Desktop =====================
 .is-desktop{
 	section#section3{
 		padding-top: 7.85vw;
 		height: getvwDesktop(902vw);
+
 		p.p1{
 			line-height: 3.4vw;
 			margin-bottom: 6.05vw;
+
+			span{
+				@include translate3d(0, 55vw, 0);
+			}
 		}
+
 		.bottom-section{
 			.circle-wrapper{
-				span.semi-circle{
+				.figure-wrap{
 					width: getvwDesktop(95.5vw);
 					height: getvwDesktop(191vw);
 				}
 			}
+
 			.img-wrapper{
 				height: getvwDesktop(1024vw);
 				margin-top: -18.8vw;
@@ -43,26 +56,68 @@
 		}
 	}
 }
+
+
 // ====================== General Styles =====================
 .is-mobile, .is-desktop{
 	section#section3{
 		background-color: $white;
+
 		p.p1{
 			text-transform: uppercase;
 			color: $black;
+
+			span{
+				display: block;
+			}
+
+			&.animate{
+				span{
+					@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+					@include translate3d(0, 0, 0);
+				}
+			}
 		}
+
 		.bottom-section{
 			display: flex;
 			flex-direction: row;
 			align-items: flex-start;
+
 			.circle-wrapper{
+				.figure-wrap{
+					display: inline-block;
+					overflow: hidden;
+				}
+
 				span.semi-circle{
 					display:inline-block;
-					&:first-child{
+					width: 100%;
+					height: 100%;
+
+					&.blue{
 						background-color: $blue;
 					}
-					&:last-child{
+					&.orange{
 						background-color: $orange;
+					}
+				}
+			}
+
+			.img-wrapper{
+				.mask-wrapper{
+					position: relative;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+
+					img{
+						@include scale(1.7,1.7);
+
+						&.animate{
+							@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+							@include scale(1,1);
+						}
 					}
 				}
 			}
