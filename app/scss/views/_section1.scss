@@ -111,7 +111,7 @@
 				}
 
 				.inview-child{
-					@include translate3d(0, 40vw, 0);					
+					@include translate3d(0, 40vw, 0);
 				}
 			}
 
@@ -253,7 +253,6 @@
 			}
 
 			span.circle{
-
 				background-color: $black;
 				position: absolute;
 			}

@@ -91,6 +91,12 @@
 	transform: scale($Xscale, $Yscale) rotate($degs);
 }
 
+@mixin scale-trans3d($Xscale, $Yscale, $Xmove, $Ymove, $Zmove){
+	-webkit-transform: scale($Xscale, $Yscale) translate3d($Xmove, $Ymove, $Zmove);
+	-moz-transform: scale($Xscale, $Yscale) translate3d($Xmove, $Ymove, $Zmove);
+	transform: scale($Xscale, $Yscale) translate3d($Xmove, $Ymove, $Zmove);
+}
+
 @mixin transform-origin($X, $Y){
 	-webkit-transform-origin: $X $Y;
 	-ms-transform-origin: $X $Y;

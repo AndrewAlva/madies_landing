@@ -1,56 +1,74 @@
 section#section4
 	.desktop-grid.mobile-grid
 		.top-section
-			h2.h2.col-10.offset-1.col-lg-9.offset-lg-1 That's How Irresistible Madies is
-			.circle-wrapper.offset-7.col-5.offset-lg-8.col
+			.copy-wrap.col-10.offset-1.col-lg-9.offset-lg-1.mbrt-cascade
+				h2.h2 That's How
+				h2.h2 Irresistible
+				h2.h2 Madies is
+
+			.circle-wrapper.offset-7.col-5.offset-lg-8.col.mbrt-cascade
 				span.semi-circle.radius-top
 				span.circle
+
+
+
 		//- slider section
-		#fruits-slider.slider-wrapper
+		#fruits-slider.slider-wrapper.mbrt-cascade
 			//- slider left
-			.slides-wrapper-2
+			.slides-wrapper-2.mbrt-cascade
 				.img-wrapper
-					.img-mask-desktop.active
-						img(src="img/Madies_Foto_08.1.jpg", alt="Madies packaging with natural mangos and lyophilized cubes")
+					.inview-mask
+						.inview-scale
+							.img-mask-desktop.active
+								img(src="img/Madies_Foto_08.1.jpg", alt="Madies packaging with natural mangos and lyophilized cubes")
 
-					.img-mask-desktop
-						img(src="img/Madies_Foto_08.2.jpg", alt="Another perspective of Madies packaging with natural mangos and lyophilized cubes")
+							.img-mask-desktop
+								img(src="img/Madies_Foto_08.2.jpg", alt="Another perspective of Madies packaging with natural mangos and lyophilized cubes")
 
-					.img-mask-desktop
-						img(src="img/Madies_Foto_08.3.jpg", alt="Packaging with lyophilized mangos surrounding it")
+							.img-mask-desktop
+								img(src="img/Madies_Foto_08.3.jpg", alt="Packaging with lyophilized mangos surrounding it")
 					
 
 			.controller.col-3.offset-2.offset-lg-15.col-lg-7
-				button.btn.btn-prev Prev
+				button.btn.btn-prev
+					span.btn-mask
+						span Prev
 
 			.slides-wrapper.col-12.offset-1.offset-lg-15.col-lg-7
 				.inner-wrapper
-					#slide-0.slide.active
-						.img-wrapper
-							img(src="img/Madies_Foto_09.1.jpg", alt="Madies mangos in a bag")
+					.inview-mask
+						.inview-scale
+							#slide-0.slide.active
+								.img-wrapper
+									img(src="img/Madies_Foto_09.1.jpg", alt="Madies mangos in a bag")
 
-					#slide-1.slide
-						.img-wrapper
-							img(src="img/Madies_Foto_09.2.jpg", alt="Madies mangos in a plate")
+							#slide-1.slide
+								.img-wrapper
+									img(src="img/Madies_Foto_09.2.jpg", alt="Madies mangos in a plate")
 
-					#slide-2.slide
-						.img-wrapper
-							img(src="img/Madies_Foto_09.3.jpg", alt="Madies mango all natural")
+							#slide-2.slide
+								.img-wrapper
+									img(src="img/Madies_Foto_09.3.jpg", alt="Madies mango all natural")
 
 
-			.fruit-name
+			.fruit-name.mbrt-cascade
 				.slider-mask
 					p.dsp2.shifting-slide-title.active Natural
 					p.dsp2.shifting-slide-title Lyophilized
 					p.dsp2.shifting-slide-title Mangos
 
 			.controller.col-3.offset-1.offset-lg-15.col-lg-7
-				button.btn.btn-next Next
+				button.btn.btn-next
+					span.btn-mask
+						span Next
 
-		.text-wrapper.text-left.col-14.offset-2.offset-lg-2.col-lg-8
-			p.p2 through a process called freeze-dried, we freeze &amp; dehydrate the fruit.
-			p.p2 That way we keep all minerals, proteins, aroma &amp; flavors.
+		.paragraphs-container.mbrt-cascade
+			.text-wrapper.text-left.col-14.offset-2.offset-lg-2.col-lg-8
+				p.p2 through a process called freeze-dried, we freeze &amp; dehydrate the fruit.
+				p.p2 That way we keep all minerals, proteins, aroma &amp; flavors.
 
-		.text-wrapper.text-right.col-14.offset-8.offset-lg-2.col-lg-8
-			p.p2 We don’t just eat madies from the packaging to the mouth.
-			p.p2 we can also create new snacks &amp; irresistible dishes.
+			.text-wrapper.text-right.col-14.offset-8.offset-lg-2.col-lg-8
+				p.p2 We don’t just eat madies from the packaging to the mouth.
+				p.p2 we can also create new snacks &amp; irresistible dishes.
+
+

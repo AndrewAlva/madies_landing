@@ -4,9 +4,16 @@
 		padding-top: 36.2vw;
 		padding-bottom: 8.2vw;
 		.top-section{
+			.copy-wrap{
+				.h2{
+					@include translate3d(0, 30vw, 0);
+				}
+			}
+
 			h2{
 				padding-right: 1.1vw;
 			}
+
 			.circle-wrapper{
 				padding: 0 0 0 0.27vw;
 				transform: translateY(-1.2vw);
@@ -39,6 +46,10 @@
 					width: 100%;
 					height: 2.4vw;
 					line-height: 3vw;
+
+					.btn-mask{
+						height: 120%;
+					}
 				}
 			}
 			.slides-wrapper{
@@ -77,11 +88,44 @@
 				left: 50%;
 				transform: translateX(-50%);
 
+				.slider-mask{
+					@include translate3d(0, 102%, 0);
+				}
+
 				.shifting-slide-title{
 					@include translate(0, 110%);
 				}
 			}
+
+			// Inview animations
+			&.animate{
+				.controller button.btn .btn-mask span{
+					@include trans-customease-delay(.7s, $easeOutCubic, 1.2s);
+					@include translate3d(0,0,0);
+				}
+
+				.slides-wrapper{
+					.inview-mask{
+						@include trans-customease-delay(1s, $easeOutCubic, 0s);
+						@include translate3d(0,0,0);
+					}
+
+					.inview-scale{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+						@include scale(1,1);
+					}
+				}
+
+				.fruit-name{
+					.slider-mask{
+						@include trans-customease-delay(1s, $easeOutCubic, 1.35s);
+						@include translate3d(0,0,0);
+					}
+				}
+			}
 		}
+
+
 		.text-wrapper{
 			&.text-right{
 				margin-top: 8vw;
@@ -96,12 +140,21 @@
 		}
 	}
 }
+
+
 // ====================== Desktop =====================
 .is-desktop{
 	section#section4{
 		padding-top: 12vw;
 		padding-bottom: 0.4vw;
+
 		.top-section{
+			.copy-wrap{
+				.h2{
+					@include translate3d(0, 40vw, 0);
+				}
+			}
+
 			.circle-wrapper{
 				transform: translate(-0.7vw, 15.7vw);
 				.semi-circle{
@@ -116,6 +169,8 @@
 				}
 			}
 		}
+
+
 		.slides-wrapper-2{
 			position: absolute;
 			left: $outMargin;
@@ -130,6 +185,20 @@
 				position: relative;
 				width: 100%;
 				height: 100%;
+			}
+
+			.inview-mask{
+				position: relative;
+				width: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.inview-scale{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				@include scale(1.8,1.8);
 			}
 
 			.img-mask-desktop{
@@ -176,12 +245,27 @@
 					}
 				}
 			}
+
+			// Inview animation
+			&.animate{
+				.inview-mask{
+					@include trans-customease-delay(1.6s, $easeOutCubic, .3s);
+					width: 100%;
+				}
+
+				.inview-scale{
+					@include trans-customease-delay(1.6s, $easeOutCubic, .3s);
+					@include scale(1,1);
+				}
+			}
 		}
+
 		// slider
 		.slider-wrapper{
 			position: relative;
 			margin-top: 23.05vw;
 			margin-bottom: 16.1vw;
+
 			.controller{
 				padding-left: 1.855104vw;
 				button.btn{
@@ -195,14 +279,17 @@
 					&.btn-next{ margin-top: 2.5vw}
 				}
 			}
+
 			.slides-wrapper{
 				flex-direction: column;
+
 				.inner-wrapper{
 					height: getvwDesktop(653vw);
+					padding-left: 1.2vw;
 				}
+
 				.slide{
 					height: getvwDesktop(653vw);
-					padding-left: 1.2vw;
 
 					&.prev{
 						@include translate(0, -102%);
@@ -212,14 +299,15 @@
 						@include translate(0, 102%);
 					}
 				}
+
 				.img-wrapper{
-					
-					
 					img{
 						height: getvwDesktop(653vw);
 					}
 				}
 			}
+
+
 			.fruit-name{
 				width: getvwDesktop(121vw);
 				height: getvwDesktop(780vw);
@@ -229,11 +317,43 @@
 				transform: translateY(50%);
 				writing-mode: vertical-lr;
 
+				.slider-mask{
+					@include translate3d(-102%,0,0);
+				}
+
 				.shifting-slide-title{
 					height: 100%;
 					@include translate(-110%, 0);
 				}
 			}
+
+			// Inview animations
+			&.animate{
+				.controller button.btn .btn-mask span{
+					@include trans-customease-delay(.7s, $easeOutCubic, 2.2s);
+					@include translate3d(0,0,0);
+				}
+
+				.slides-wrapper{
+					.inview-mask{
+						@include trans-customease-delay(1s, $easeOutCubic, 1.2s);
+						@include translate3d(0,0,0);
+					}
+
+					.inview-scale{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 1.2s);
+						@include scale(1,1);
+					}
+				}
+
+				.fruit-name{
+					.slider-mask{
+						@include trans-customease-delay(1s, $easeOutCubic, 2.55s);
+						@include translate3d(0,0,0);
+					}
+				}
+			}
+
 		}
 		// text
 		.text-wrapper{
@@ -246,28 +366,64 @@
 		}
 	}
 }
+
+
+
 // ====================== General Styles =====================
-
-
 section#section4{
 	background: $black;
+
 	.top-section{
 		display: flex;
+
+		.copy-wrap{
+			&.animate{
+				.h2{
+					@include translate3d(0, 0, 0);
+
+					&:nth-child(1){@include trans-customease-delay(1.2s, $easeOutCubic, 0s);}
+					&:nth-child(2){@include trans-customease-delay(1.2s, $easeOutCubic, .14s);}
+					&:nth-child(3){@include trans-customease-delay(1.2s, $easeOutCubic, .28s);}
+				}
+			}
+		}
+
 		h2{
 			text-align: right;
 		}
+
 		.circle-wrapper{
 			.semi-circle{
+				z-index: 1;
 				background-color: $green;
 				display: inline-block;
 				position: absolute;
 				left: -7.6vw;
+				@include scale-rotate(0, 0, -90deg);
+				@include transform-origin(center, center);
 			}
+
 			.circle{
 				background-color: $yellow;
+				@include transform-origin(bottom, center);
+				@include scale-trans3d(0,0, 0,5vw,0);
+			}
+
+			&.animate{
+				.semi-circle{
+					@include trans-customease-delay(1s, $easeOutCubic, 0s);
+					@include scale-rotate(1, 1, 0deg);
+				}
+
+				.circle{
+					@include trans-customease-delay(1s, $easeOutCubic, 0s);
+					@include scale-trans3d(1,1, 0,0,0);
+				}
 			}
 		}
 	}
+
+
 	// slider
 	.slider-wrapper{
 		position: relative;
@@ -276,7 +432,20 @@ section#section4{
 			color: $white;
 			text-transform: uppercase;
 			cursor: pointer;
+
+			.btn-mask{
+				display: block;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+
+				span{
+					display: block;
+					@include translate3d(0,101%,0);
+				}
+			}
 		}
+
 		.slides-wrapper{
 			display: flex;
 			flex-wrap: nowrap;
@@ -284,8 +453,22 @@ section#section4{
 
 			.inner-wrapper{
 				position: relative;
-				overflow: hidden;
 				width: 100%;
+			}
+
+			.inview-mask{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				@include translate3d(0, 50vw, 0);
+			}
+
+			.inview-scale{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				@include scale(1.7,1.7);
 			}
 
 			.slide{
@@ -313,7 +496,6 @@ section#section4{
 						}
 					}
 				}
-				
 			}
 
 			.img-wrapper{
@@ -330,11 +512,13 @@ section#section4{
 				}
 			}
 		}
+
 		.fruit-name{
 			text-transform: uppercase;
 			text-align: center;
 			z-index: 2;
 			position: absolute;
+			overflow: hidden;
 
 			.slider-mask{
 				position: relative;
@@ -357,6 +541,8 @@ section#section4{
 			}
 		}
 	}
+
+
 	// text
 	.text-wrapper{
 		&.text-right{
@@ -364,6 +550,27 @@ section#section4{
 		}
 		p.p2{
 			text-transform: uppercase;
+		}
+	}
+
+	// Text Inview animations
+	.paragraphs-container{
+		.text-wrapper{
+			&:nth-child(1){
+				@include translate3d(0,20vw,0);
+			}
+			&:nth-child(2){
+				@include translate3d(0,28vw,0);
+			}
+		}
+
+		&.animate{
+			.text-wrapper{
+				&:nth-child(1), &:nth-child(2){
+					@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+					@include translate3d(0,0,0);
+				}
+			}
 		}
 	}
 }
