@@ -54,22 +54,31 @@
 		}
 	}
 }
-// ====================== Desktop =====================
 
+
+// ====================== Desktop =====================
 .is-desktop{
 	section#section5{
 		padding-top: 10vw;
-		h2.h2{
-			&:first-child{
-				padding-right: 0.9vw;
+
+		.copy-wrapper{
+			&.top{
+				margin-top: -.08vw;
+
+				.h2{
+					padding-right: .3vw;
+				}
 			}
-			&.second-text{
-				margin-top: 49.3vw;
+
+			&.bottom{
+				margin-top: 49.4vw;
 			}
 		}
+
 		.circle-wrapper{
 			&.number-2{
-				top: 1.4vw;
+				top: 1.5vw;
+
 				.semi-circle{
 					height: getvwDesktop(424vw);
 					width: getvwDesktop(839vw);
@@ -83,7 +92,8 @@
 			}
 			&.number-0{
 				right: -21.8vw;
-				top: 31.3vw;
+				top: 31.45vw;
+
 				span{
 					width: 29.97396vw;
 					height: 59.31667vw;
@@ -109,20 +119,43 @@
 		}
 	}
 }
+
+
 // ====================== General Styles =====================
 .is-mobile, .is-desktop{
 	section#section5{
 		background-color: $white;
 		position: relative;
-		h2.h2{
+
+		.copy-wrapper{
 			z-index: 2;
-			color: $black;
-			&:first-child{
-				text-align: right;
+			position: relative;
+
+			&.top{text-align: right;}
+
+			.h2{
+				@include translate3d(0, 15vw, 0);
+			}
+
+			&.animate{
+				.h2{
+					@include translate3d(0,0,0);
+
+					&:nth-child(1){@include trans-customease-delay(1.2s, $easeOutCubic, 0s);}
+					&:nth-child(2){@include trans-customease-delay(1.2s, $easeOutCubic, .15s);}
+					&:nth-child(3){@include trans-customease-delay(1.2s, $easeOutCubic, .3s);}
+					&:nth-child(4){@include trans-customease-delay(1.2s, $easeOutCubic, .45s);}
+				}
 			}
 		}
+
+		h2.h2{
+			color: $black;
+		}
+
 		.circle-wrapper{
 			display: inline-block;
+
 			&.number-2{
 				display: flex;
 				flex-direction: column;
