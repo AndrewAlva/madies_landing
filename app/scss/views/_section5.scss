@@ -73,11 +73,15 @@
 			&.bottom{
 				margin-top: 49.4vw;
 			}
+
+			.h2{
+				@include translate3d(0, 45vw, 0);
+			}
 		}
 
 		.circle-wrapper{
 			&.number-2{
-				top: 1.5vw;
+				top: 1.6vw;
 
 				.semi-circle{
 					height: getvwDesktop(424vw);
@@ -85,6 +89,7 @@
 					border-radius:  borderR(424vw) borderR(424vw) 0 0;
 				}
 				.triangle{
+					right: .1vw;
 					border-left: getvwDesktop(839vw) solid transparent;
 					border-right: 0px solid transparent;
 					border-bottom: getvwDesktop(719vw) solid $blue;
@@ -105,10 +110,34 @@
 					}
 				}
 			}
+
+			.inview-translate{
+				@include translate3d(0, 20vw, 0);
+
+				.triangle{
+					@include translate3d(0, 12vw, 0);
+				}
+
+				.semi-circle.right{
+					@include translate3d(0, 6vw, 0);
+				}
+			}
 		}
 		.img-wrapper{
 			margin-top: -9.7vw;
 			height: getvwDesktop(919vw);
+
+			.inview-mask{
+				@include translate3d(0, 49vw, 0);
+
+				.inview-translate{
+					@include translate3d(0, -29vw, 0);
+
+					img{
+						@include scale(2,2);
+					}
+				}
+			}
 		}
 	}
 
@@ -133,18 +162,14 @@
 
 			&.top{text-align: right;}
 
-			.h2{
-				@include translate3d(0, 15vw, 0);
-			}
-
 			&.animate{
 				.h2{
 					@include translate3d(0,0,0);
 
-					&:nth-child(1){@include trans-customease-delay(1.2s, $easeOutCubic, 0s);}
-					&:nth-child(2){@include trans-customease-delay(1.2s, $easeOutCubic, .15s);}
-					&:nth-child(3){@include trans-customease-delay(1.2s, $easeOutCubic, .3s);}
-					&:nth-child(4){@include trans-customease-delay(1.2s, $easeOutCubic, .45s);}
+					&:nth-child(1){@include trans-customease-delay(1.5s, $easeOutCubic, 0s);}
+					&:nth-child(2){@include trans-customease-delay(1.5s, $easeOutCubic, .08s);}
+					&:nth-child(3){@include trans-customease-delay(1.5s, $easeOutCubic, .16s);}
+					&:nth-child(4){@include trans-customease-delay(1.5s, $easeOutCubic, .24s);}
 				}
 			}
 		}
@@ -164,6 +189,7 @@
 					background-color: $yellow;
 				}
 				.triangle{
+					position: relative;
 					width: 0;
 					height: 0;
 				}
@@ -179,13 +205,59 @@
 					}
 				}
 			}
+
+			.inview-translate{
+				@include flexIt;
+				@include flexWrap;
+			}
+
+			&.animate{
+				.inview-translate{
+					@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+					@include translate3d(0,0,0);
+
+					.triangle{
+						@include trans-customease-delay(1.8s, $easeOutCubic, 0s);
+						@include translate3d(0, 0, 0);
+					}
+
+					.semi-circle.right{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+						@include translate3d(0, 0, 0);
+					}
+				}
+			}
 		}
 
 		.img-wrapper{
+			.inview-mask, .inview-translate{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
 			video{
 				position: absolute;
 				top: 0; left: 0;
 				width: 100%;
+			}
+
+			&.animate{
+				.inview-mask{
+					@include trans-customease-delay(1.6s, $easeOutCubic, .7s);
+					@include translate3d(0,0,0);
+
+					.inview-translate{
+						@include trans-customease-delay(1.6s, $easeOutCubic, .7s);
+						@include translate3d(0,0,0);
+
+						img{
+							@include trans-customease-delay(1.7s, $easeOutCubic, .7s);
+							@include scale(1,1);
+						}
+					}
+				}
 			}
 		}
 	}
