@@ -197,6 +197,30 @@
 		flex-wrap: nowrap;
 }
 
+@mixin flexRow{
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+@mixin flexJustifyEnd{
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-moz-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+@mixin flexShrink($ratio){
+	-webkit-flex-shrink: $ratio;
+	-ms-flex-negative: $ratio;
+	flex-shrink: $ratio;
+}
+
 @mixin ani-name($name){
 	-webkit-animation-name: $name;
 	-moz-animation-name: $name;
