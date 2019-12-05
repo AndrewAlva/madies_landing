@@ -2,14 +2,19 @@
 .is-mobile{
 	section#section5{
 		padding-top: 14.7vw;
-		h2.h2{
-			&:first-child{
+		.copy-wrapper{
+			.h2{
+				@include translate3d(0, 45vw, 0);
+			}
+
+			&.top{
 				padding-right: 1.2vw;
 			}
-			&.second-text{
-				margin-top: 63.5vw;
+			&.bottom{
+				margin-top: 63.3vw;
 			}
 		}
+
 		.circle-wrapper{
 			&.number-2{
 				top: 9.3vw;
@@ -38,10 +43,35 @@
 					}
 				}
 			}
+
+			.inview-translate{
+				@include translate3d(0, 20vw, 0);
+
+				.triangle{
+					@include translate3d(0, 24vw, 0);
+				}
+
+				.semi-circle.right{
+					@include translate3d(0, 12vw, 0);
+				}
+			}
 		}
+
 		.img-wrapper{
 			margin-top: -11.9vw;
 			height: getvw(645vw);
+
+			.inview-mask{
+				@include translate3d(0, 87vw, 0);
+
+				.inview-translate{
+					@include translate3d(0, -29vw, 0);
+
+					img{
+						@include scale(1.7,1.7);
+					}
+				}
+			}
 		}
 	}
 
@@ -134,7 +164,7 @@
 					@include translate3d(0, -29vw, 0);
 
 					img{
-						@include scale(2,2);
+						@include scale(1.7,1.7);
 					}
 				}
 			}
@@ -245,15 +275,15 @@
 
 			&.animate{
 				.inview-mask{
-					@include trans-customease-delay(1.6s, $easeOutCubic, .7s);
+					@include trans-customease-delay(1.6s, $easeOutCubic, .32s);
 					@include translate3d(0,0,0);
 
 					.inview-translate{
-						@include trans-customease-delay(1.6s, $easeOutCubic, .7s);
+						@include trans-customease-delay(1.6s, $easeOutCubic, .32s);
 						@include translate3d(0,0,0);
 
 						img{
-							@include trans-customease-delay(1.7s, $easeOutCubic, .7s);
+							@include trans-customease-delay(1.7s, $easeOutCubic, .32s);
 							@include scale(1,1);
 						}
 					}
