@@ -24,14 +24,41 @@
 @import 'views/section4';
 @import 'views/section5';
 @import 'views/footer';
-.tester{
-	width: 19px;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 6px;
 
-	background-color: rgba(255,255,255,.5);
+
+.tester{
+	z-index: 999;
+	width: 100%;
+	height: 1px;
+	position: fixed;
+	margin: auto;
+	top: 0; bottom: 0;
+
+	background-color: rgba(255,0,0,1);
+}
+
+.tester2{
+	z-index: 999;
+	width: 100%;
+	height: 1px;
+	position: fixed;
+	margin: auto;
+	top: 600px;
+	bottom: 0;
+
+	background-color: rgba(0, 255,0, 1);
+}
+
+.parallax:after{
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	height: 1px;
+	background-color: aqua;
+	margin: auto;
+	top: 0; bottom: 0;
 }
 
 .random{

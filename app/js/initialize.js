@@ -3,6 +3,20 @@
 // without waiting for stylesheets, images, and
 // subframes to finish loading
 var PageSmoothScroll;
+var MaxWidth = window.innerWidth;
+var MaxHeight = window.innerHeight;
+var HalfWidth = MaxWidth / 2;
+var HalfHeight = MaxHeight / 2;
+
+var _resize = debounce(onWindowResize, 200);
+window.addEventListener('resize', _resize, false);
+
+function onWindowResize(){
+    MaxWidth = window.innerWidth;
+    MaxHeight = window.innerHeight;
+    HalfWidth = MaxWidth / 2;
+    HalfHeight = MaxHeight / 2;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Do something
@@ -24,6 +38,9 @@ window.onload = function() {
     // Do something, remove preloader perhaps
     // console.log("Page fully loaded.");
     // console.log("Initialize.js");
+
+    var parallax = new Parallax();
+    RAF.add(parallax);
 
     // Section 2 Blinds animation init
     var ValuesBlinds = new Blinds({
