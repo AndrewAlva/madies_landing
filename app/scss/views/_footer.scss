@@ -229,7 +229,7 @@
 				&.semi-circle{
 					background-color: $green;
 					right: 0;
-					@include translate3d(101%, 0,0);
+					@include translate3d(105%, 0,0);
 				}
 				&:first-child{
 					background-color: $black;
