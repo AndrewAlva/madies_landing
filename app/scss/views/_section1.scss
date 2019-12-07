@@ -13,6 +13,12 @@
 		.middle-section{
 			.img-wrapper{
 				height: getvw(431vw);
+
+				.mbrt-cascade{
+					.inview-translate{
+						@include translate3d(0, 15vw, 0);
+					}
+				}
 			}
 
 			.circle-wrapper{
@@ -89,6 +95,12 @@
 		.middle-section{
 			.img-wrapper{
 				height: getvwDesktop(790vw);
+
+				.mbrt-cascade{
+					.inview-translate{
+						@include translate3d(0, 25vw, 0);
+					}
+				}
 			}
 			.circle-wrapper{
 				margin-top: 12.5vw;
@@ -178,19 +190,34 @@
 
 			.img-wrapper{
 				z-index: 2;
+				overflow: visible;
 
 				.mbrt-cascade{
 					position: relative;
 					width: 100%;
 					height: 100%;
-					overflow: hidden;
 
-					img{
+					.inview-translate{
+						position: relative;
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+					}
+
+					.inview-scale{
+						position: relative;
+						width: 100%;
+						height: 100%;
 						@include scale(1.35,1.35);
 					}
 
 					&.animate{
-						img{
+						.inview-translate{
+							@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+							@include translate3d(0, 0, 0);
+						}
+
+						.inview-scale{
 							@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
 							@include scale(1,1);
 						}

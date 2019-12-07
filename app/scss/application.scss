@@ -43,23 +43,23 @@
 	height: 1px;
 	position: fixed;
 	margin: auto;
-	top: 600px;
-	bottom: 0;
+	// top: 600px;
+	bottom: 300px;
 
 	background-color: rgba(0, 255,0, 1);
 }
 
-.parallax:after{
-	content: '';
-	display: block;
-	position: absolute;
-	z-index: 999;
-	width: 100%;
-	height: 1px;
-	background-color: aqua;
-	margin: auto;
-	top: 0; bottom: 0;
-}
+// .parallax:after{
+// 	content: '';
+// 	display: block;
+// 	position: absolute;
+// 	z-index: 999;
+// 	width: 100%;
+// 	height: 1px;
+// 	background-color: aqua;
+// 	margin: auto;
+// 	top: 0; bottom: 0;
+// }
 
 .random{
 	position: absolute;

@@ -110,11 +110,19 @@
 					width: 100%;
 					height: 100%;
 					overflow: hidden;
+					@include translate3d(0, 75vw, 0);
 
 					img{
-						@include scale(1.7,1.7);
+						@include scale(2,2);
+					}
+				}
 
-						&.animate{
+				&.animate{
+					.mask-wrapper{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+						@include translate3d(0,0,0);
+
+						img{
 							@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
 							@include scale(1,1);
 						}

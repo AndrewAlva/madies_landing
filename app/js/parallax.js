@@ -33,7 +33,7 @@ var Floater = function(el){
 	this.height = this.el.getBoundingClientRect().height;
 	this.halfHeight = this.height / 2;
 
-	this.centerDisplacement = 300;
+	this.bottomThreshold = MaxHeight - HalfHeight;
 
 	// Get its center Y position according to viewport scroll position
 	this.center = this.top + (this.height / 2);
@@ -48,10 +48,10 @@ var Floater = function(el){
 	this.displacing = function(){
 		// Detect if they are inside the viewport
 		// If so, calculate scroll displacement
-		if (this.top + this.height > 0 && this.top < MaxHeight) {
+		if (this.top + this.height > 0 && this.top < MaxHeight - this.bottomThreshold) {
 			// Scroll displacement proportion
-			var dist = (this.center - this.centerDisplacement) - HalfHeight;
-			var distRatio = dist / MaxHeight;
+			var dist = this.top - this.bottomThreshold;
+			var distRatio = dist / (this.bottomThreshold + this.height);
 
 			// this.yDist += (dist - this.yDist) * this.cof;
 			// this.yDist += ((distRatio * this.maxDist) - this.yDist) * this.cof;
@@ -60,6 +60,7 @@ var Floater = function(el){
 			this.el.style = "transform: translate3d(0px, " + this.yDist + "vw, 0px);";
 
 			
+			// console.log("distance: " + dist);
 			// console.log("distance ratio: " + distRatio);
 		}
 	}

@@ -4,14 +4,16 @@ section#section1.index-1
 			span Un producto natural sin nada que agregar
 
 		.middle-section
-			.img-wrapper.col-10.offset-4.col-lg-8.offset-lg-2
+			.img-wrapper.col-10.offset-4.col-lg-8.offset-lg-2.parallax(data-parallax-intensity="1.3")
 				.mbrt-cascade
-					img(src="../img/Madies_Foto_02.jpg", alt="Mangos frescos naturales")
+					.inview-translate
+						.inview-scale
+							img(src="../img/Madies_Foto_02.jpg", alt="Mangos frescos naturales")
 
 			.circle-wrapper.offset-5.col-3.col-lg-4.offset-lg-8.mbrt-cascade
 					span.semi-circle.radius-bottom.orange
 					
-					.black-half-container
+					.black-half-container.parallax(data-parallax-intensity=".5")
 						span.semi-circle.radius-left.black
 
 
@@ -20,7 +22,7 @@ section#section1.index-1
 				h2.h2.inview-child De la Huerta
 				h2.h2.inview-child a tus Manos
 
-			.img-wrapper
+			.img-wrapper.parallax(data-parallax-intensity=".3")
 				img(src="../img/Madies_Foto_03.jpg", alt="Frescura de la huerta a tus manos")
 
 			span.circle
