@@ -101,7 +101,7 @@ var SmoothScroll = function(args){
 
 	this.addListeners = function(){
 		window.addEventListener('scroll', this.onScroll);
-		window.addEventListener('resize', this.onResize);
+		window.addEventListener('resize', debounce(this.onResize, 800));
 	}
 
 }

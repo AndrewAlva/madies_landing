@@ -8,6 +8,7 @@ var Parallax = function(){
 		// for (var i = 4; i < 5; i++) {
 			var _floating = new Floater(objs[i]);
 			this.floatingObjs.push(_floating);
+			_floating.resizeListener();
 		}
 
 		// console.log(this.floatingObjs)
@@ -62,6 +63,9 @@ var Floater = function(el){
 			
 			// console.log("distance: " + dist);
 			// console.log("distance ratio: " + distRatio);
+		} else if (this.top > window.innerHeight && this.yDist != 0){
+			this.yDist = 0;
+			this.el.style = "transform: translate3d(0px, " + this.yDist + "vw, 0px);";
 		}
 	}
 
@@ -76,6 +80,14 @@ var Floater = function(el){
 
 	this.render = function() {
 		this.update();
+	}
+
+
+
+	this.resizeListener = function(){
+		window.addEventListener("resize", debounce(function(){
+			_self.bottomThreshold = MaxHeight - HalfHeight;
+		}, 250));
 	}
 
 	return this;
