@@ -59,7 +59,8 @@
 
 		.img-wrapper{
 			margin-top: -11.7vw;
-			height: getvw(645vw);
+			// height: getvw(645vw);
+			height: getvw(767vw);
 
 			.inview-mask{
 				@include translate3d(0, 87vw, 0);
@@ -67,7 +68,7 @@
 				.inview-translate{
 					@include translate3d(0, -29vw, 0);
 
-					img{
+					img, video{
 						@include scale(1.7,1.7);
 					}
 				}
@@ -155,7 +156,8 @@
 		}
 		.img-wrapper{
 			margin-top: -9.7vw;
-			height: getvwDesktop(919vw);
+			// height: getvwDesktop(919vw);
+			height: getvwDesktop(1088vw);
 
 			.inview-mask{
 				@include translate3d(0, 49vw, 0);
@@ -163,7 +165,7 @@
 				.inview-translate{
 					@include translate3d(0, -29vw, 0);
 
-					img{
+					img, video{
 						@include scale(1.7,1.7);
 					}
 				}
@@ -269,7 +271,8 @@
 
 			video{
 				position: absolute;
-				top: 0; left: 0;
+				top: -0.3vw;
+				left: 0;
 				width: 100%;
 			}
 
@@ -282,7 +285,7 @@
 						@include trans-customease-delay(1.6s, $easeOutCubic, .32s);
 						@include translate3d(0,0,0);
 
-						img{
+						img, video{
 							@include trans-customease-delay(1.7s, $easeOutCubic, .32s);
 							@include scale(1,1);
 						}
