@@ -39,6 +39,9 @@ window.onload = function() {
     // console.log("Page fully loaded.");
     // console.log("Initialize.js");
 
+    // Remove loader
+    document.getElementById('loader-screen').classList.add('loaded');
+
     var parallax = new Parallax();
     RAF.add(parallax);
 
