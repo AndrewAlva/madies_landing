@@ -1,4 +1,6 @@
-function toTop() {
+function toTop(speed) {
+	var _intervalSpeed = speed || 10;
+
 	function getToTop(){
 		var _currentScrollPos = window.scrollY;
 		var _target = _currentScrollPos - 100;
@@ -10,5 +12,5 @@ function toTop() {
 
 	var scrollTopInterval = setInterval(function(){
 		getToTop();
-	}, 10);
+	}, _intervalSpeed);
 }

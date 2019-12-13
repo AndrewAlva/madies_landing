@@ -34,6 +34,14 @@
 	transition: all $timing $ease $delay;
 }
 
+@mixin trans-custom($property, $timing, $ease, $delay){
+	-webkit-transition: $property $timing $ease $delay;
+	-moz-transition: $property $timing $ease $delay;
+	-ms-transition: $property $timing $ease $delay;
+	-o-transition: $property $timing $ease $delay;
+	transition: $property $timing $ease $delay;
+}
+
 @mixin trans-ease-delay-transform($timing, $delay){
 	-webkit-transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
 	transition: -webkit-transform $timing cubic-bezier(.3,0,.2,1) $delay;
@@ -236,7 +244,6 @@
 }
 
 @mixin ani-ease($ease){
-
 	-webkit-animation-timing-function: $ease;
 	-moz-animation-timing-function: $ease;
 	-o-animation-timing-function: $ease;
@@ -244,11 +251,17 @@
 }
 
 @mixin ani-fillmode($mode){
-
 	-webkit-animation-fill-mode: $mode;
 	-moz-animation-fill-mode: $mode;
 	-o-animation-fill-mode: $mode;
 	animation-fill-mode: $mode;
+}
+
+@mixin ani-delay($delay){
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	-o-animation-delay: $delay;
+	animation-delay: $delay;
 }
 
 

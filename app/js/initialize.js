@@ -1,3 +1,7 @@
+// Set scroll position to show loader properly
+toTop(0.1);
+
+
 // Trigger functions when the initial HTML document
 // has been completely loaded and parsed,
 // without waiting for stylesheets, images, and
@@ -41,6 +45,14 @@ window.onload = function() {
 
     // Remove loader
     document.getElementById('loader-screen').classList.add('loaded');
+    document.getElementById('header-nav').classList.add('loaded');
+
+    // Activate animation of first elements inview
+    var firstLoadEls = document.getElementsByClassName('firstload');
+    for (var i = 0; i < firstLoadEls.length; i++) {
+        firstLoadEls[i].classList.add('animate');
+    }
+
 
     var parallax = new Parallax();
     RAF.add(parallax);

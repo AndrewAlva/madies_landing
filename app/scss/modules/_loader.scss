@@ -1,17 +1,47 @@
+$loader_keyduration_0: 800ms;
+$loader_keyduration_1: 800ms;
+$loader_keyduration_2: 1s;
+$loader_keyduration_3: 1600ms;
+$loader_keyduration_4: 800ms;
+
+$loader_keyframe_1: $loader_keyduration_0;
+$loader_keyframe_2: $loader_keyframe_1 + $loader_keyduration_1;
+$loader_keyframe_3: $loader_keyframe_2 + $loader_keyduration_2;
+$loader_keyframe_4: $loader_keyframe_3 + $loader_keyduration_3;
+$loader_keyframe_4_1: $loader_keyframe_4 + 100ms;
+$loader_keyframe_5: $loader_keyframe_4 + $loader_keyduration_4;
+
+$phrase-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+
 #loader-screen{
 	z-index: 999;
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background-color: $black;
+	pointer-events: none;
+	@include ani-delay($loader_keyframe_4);
+	@include ani-fillmode(forwards);
+
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		@include transform-origin(top, center);
+		// border: 1px solid red;
+	}
 
 	.center-wrap{
 		position: absolute;
 		margin: auto;
-		top: 0; bottom: 0;
+		top: 2.96vw;
 		width: 100%;
 		height: getvwDesktop(70vw);
 		overflow: hidden;
+		@include translate3d(0, 41.5vh, 0);
 	}
 
 	.logo-wrap{
@@ -22,7 +52,6 @@
 		width: getvwDesktop(285vw);
 		height: getvwDesktop(60vw);
 		@include transform-origin(bottom, center);
-		@include ani-duration(800ms);
 		@include ani-ease(cubic-bezier(0.55, 0.055, 0.675, 0.19));
 		@include ani-fillmode(both);
 
@@ -38,15 +67,17 @@
 		width: 100%;
 		height: getvwDesktop(32vw);
 		text-align: center;
-		@include trans-customease-delay(.8s, $easeOutCubic, .8s)
 		@include translate3d(0, 123%, 0);
 		opacity: 0;
+		@include ani-delay($loader_keyframe_4_1);
+		@include ani-fillmode(forwards);
 
 		h2{
 			position: relative;
 			top: getvwDesktop(-11vw);
 			text-transform: uppercase;
-			font-size: getvwDesktop(42vw);
+			// font-size: 1.66667vw;
+			font-size: 2.1875vw;
 			font-family: 'Blw';
 			font-weight: 300;
 		}
@@ -54,13 +85,35 @@
 
 
 	&.loaded{
+		@include ani-duration(0s);
+		@include ani-name(pos-fix-abs);
+
+		&:before{
+			@include trans-customease-delay($loader_keyduration_3, $phrase-ease, $loader_keyframe_3)
+			@include scale(1,0);
+		}
+
+		.center-wrap{
+			@include trans-customease-delay($loader_keyduration_3, $phrase-ease, $loader_keyframe_3);
+			@include translate3d(0, 0, 0);
+		}
+
 		.logo-wrap{
+			@include ani-duration($loader_keyduration_0);
 			@include ani-name(deform-up);
 		}
 
 		.tagline-wrap{
+			@include trans-customease-delay($loader_keyduration_1, $easeOutCubic, $loader_keyframe_1);
 			@include translate3d(0, 0, 0);
 			opacity: 1;
+			@include ani-duration(0s);
+			@include ani-name(hide);
+
+			h2{
+				@include trans-custom(all, $loader_keyduration_3, $phrase-ease, $loader_keyframe_3);
+				@include scale(0.7619, 0.7619);
+			}
 		}
 	}
 }
@@ -79,7 +132,31 @@
 	}
 }
 
+@keyframes pos-fix-abs {
+	from {
+		position: fixed;
+	}
+	to {
+		position: absolute;
+	}
+}
 
+@keyframes hide {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 
 
 

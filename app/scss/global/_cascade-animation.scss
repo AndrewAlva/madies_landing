@@ -6,7 +6,8 @@
 	$suzeEase: cubic-bezier(.3,0,.2,1);
 	$cascade_trans_duration: 1200ms;
 	$cascade_interval: 200ms;
-	$preloader_trans_duration: 500ms;
+	// $preloader_trans_duration: 500ms;
+	$preloader_trans_duration: 5000ms;
 	$cascade_firstload_mobile: 1000ms;
 	$cascade_firstload_desktop: 700ms;
 

@@ -8,6 +8,7 @@
 		.logo-wrapper{
 			img{
 				width: 18.6vw;
+				@include translate3d(0, 124%, 0);
 			}
 		}
 		p.phrase{
@@ -20,7 +21,7 @@
 				&.language-page{
 					width: 12.66667vw;
 					height: 12.66667vw;
-					margin:1.33334vw;
+					margin: 1.33334vw;
 				}
 				&.spanish, 
 				&.english{
@@ -85,6 +86,7 @@
 		.logo-wrapper{
 			img{
 				width: 7.8vw;
+				@include translate3d(0, 112%, 0);
 			}
 		}
 
@@ -95,6 +97,10 @@
 			font-weight: 300;
 			text-transform: uppercase;
 			text-align: center;
+			opacity: 0;
+			// color: red;
+			@include ani-delay($loader_keyframe_4_1);
+			@include ani-fillmode(forwards);
 		}
 		ul.language-wrapper{
 			margin: 0 auto;
@@ -204,6 +210,16 @@
 			}
 		}
 	}
+
+	// Loader animation style ===================
+	nav.nav-section{
+		&.loaded{
+			p.phrase{
+				@include ani-duration(0s);
+				@include ani-name(show);
+			}
+		}
+	}
 }
 
 // ======================General Styles======================
@@ -213,11 +229,15 @@
 		display: flex;
 		flex-direction: row;
 		align-items: baseline;
+
 		.logo-wrapper{
 			display: inline-block;
+			overflow: hidden;
 		}
+
 		ul.language-wrapper{
 			display: inline-flex;
+
 			li{
 				&.language-page{
 					position: relative;
@@ -225,15 +245,29 @@
 					flex-direction: column;
 					justify-content: center;
 				}
-				a.a1{
-					color: $white;
-					text-transform: uppercase;
-					text-align: center;
-				}
+
 				&:nth-child(2){
 					position: absolute;
 					top: 50%;
 					transform: translate(-50%, -50%);
+				}
+
+				.lang-mask{
+					position: relative;
+					display: block;
+					overflow: hidden;
+
+					span{
+						position: relative;
+						display: block;
+						@include translate3d(0, 100%, 0);
+					}
+				}
+
+				.a1{
+					color: $white;
+					text-transform: uppercase;
+					text-align: center;
 				}
 			}
 		}
@@ -277,6 +311,29 @@
 
 		.img-wrapper{
 			img{@include transform-origin(left, bottom);}
+		}
+	}
+
+	// Loader animation style ===================
+	nav.nav-section{
+		&.loaded{
+			.logo-wrapper{
+				img{
+					@include trans-customease-delay($loader_keyduration_4, $easeOutCubic, $loader_keyframe_4);
+					@include translate3d(0,0,0);
+				}
+			}
+
+			ul.language-wrapper{
+				li{
+					.lang-mask{
+						span{
+							@include trans-customease-delay($loader_keyduration_4, $easeOutCubic, $loader_keyframe_4);
+							@include translate3d(0,0,0);
+						}
+					}
+				}
+			}
 		}
 	}
 }
