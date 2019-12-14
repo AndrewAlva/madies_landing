@@ -7,6 +7,7 @@ var Blinds = function(args) {
 	this.counter = 0;
 	this.copys = 3;
 	this.transitionTime = 200;
+	this.interval = 2200;
 	this.container = document.getElementById(args.containerID) || document.getElementById('blind-text-container');
 	this.firstShifters = document.getElementsByClassName('first-blind');
 	this.secondShifters = document.getElementsByClassName('second-blind');
@@ -68,15 +69,13 @@ var Blinds = function(args) {
 		}, this.transitionTime);
 	};
 
-	this.interval = 3000;
-
 	this.init = function(){
 		this.switch = setInterval(function(){
 			_self.shift();
 		}, this.interval);
-	}
+	};
 
 	this.stop = function(){
 		clearInterval(_self.switch);
-	}
+	};
 }

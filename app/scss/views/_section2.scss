@@ -133,7 +133,8 @@
 					width: 100%;
 					height: 0;
 					overflow: hidden;
-					@include transitions-ease(.9s);
+					// @include transitions-ease(.9s);
+					@include trans-customease-delay(1.1s, $easeOutCubic, 0s);
 
 					&.show{
 						z-index: 1;
@@ -148,7 +149,8 @@
 
 				img{
 					position: absolute;
-					@include transitions-ease(.9s);
+					// @include transitions-ease(.9s);
+					@include trans-customease-delay(1.1s, $easeOutCubic, 0s);
 					@include transform-origin(bottom, center);
 					@include scale(1.5,1.5);
 				}

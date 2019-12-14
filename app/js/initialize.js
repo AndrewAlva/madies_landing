@@ -62,7 +62,7 @@ window.onload = function() {
         containerID: 'blind-text-container'
     });
     var areBlindsActive = false;
-    var blindsInitDelay = 1400;
+    var blindsInitDelay = 500;
 
 
     // General inview animation, linked with "Cascading" system
