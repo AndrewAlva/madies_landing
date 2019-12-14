@@ -16,7 +16,7 @@ $loader_keyframe_5: $loader_keyframe_4 + $loader_keyduration_4;
 $loader_keyframe_6: $loader_keyframe_5 + $loader_keyduration_5 - 400ms; // Lang Dot animation
 $loader_keyframe_7: $loader_keyframe_6 + $loader_keyduration_6; // Lang Dot animation
 
-$phrase-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+$phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 
 
 #loader-screen{
