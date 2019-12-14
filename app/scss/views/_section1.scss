@@ -60,11 +60,15 @@
 				height: getvw(756vw);
 				margin-top: -10.1vw;
 			}
-			span.circle{
+			.black-sun-wrap{
 				width: getvw(163vw);
 				height: getvw(158.84vw);
 				bottom: 10.2vw;
 				right: .8vw;
+			}
+			span.circle{
+				width: getvw(163vw);
+				height: getvw(158.84vw);
 			}
 			img.mountain{
 				width: getvw(161vw);
@@ -147,11 +151,16 @@
 				position: absolute;
 				left: $outMargin;
 			}
-			span.circle{
+			.black-sun-wrap{
 				width: getvwDesktop(509vw);
-				height: getvwDesktop(500vw);
+				height: getvwDesktop(520vw);
 				bottom: 3vw;
 				right: -4.7vw;
+			}
+			span.circle{
+				bottom: 0;
+				width: getvwDesktop(509vw);
+				height: getvwDesktop(500vw);
 			}
 			img.mountain{
 				width: getvwDesktop(518vw);
@@ -298,9 +307,24 @@
 				z-index: 2
 			}
 
+			.black-sun-wrap{
+				position: absolute;
+				overflow: hidden;
+
+				.circle{
+					position: absolute;
+					@include translate3d(0, 6vw, 0);
+				}
+
+				&.animate{
+					.circle{
+						@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
+						@include translate3d(0,0,0);
+					}
+				}
+			}
 			span.circle{
 				background-color: $black;
-				position: absolute;
 			}
 
 			img.mountain{
