@@ -3,6 +3,9 @@ $loader_keyduration_1: 800ms;
 $loader_keyduration_2: 1s;
 $loader_keyduration_3: 1600ms;
 $loader_keyduration_4: 800ms;
+$loader_keyduration_5: 2200ms;
+$loader_keyduration_6: 380ms;
+$loader_keyduration_7: 650ms;
 
 $loader_keyframe_1: $loader_keyduration_0;
 $loader_keyframe_2: $loader_keyframe_1 + $loader_keyduration_1;
@@ -10,6 +13,8 @@ $loader_keyframe_3: $loader_keyframe_2 + $loader_keyduration_2;
 $loader_keyframe_4: $loader_keyframe_3 + $loader_keyduration_3;
 $loader_keyframe_4_1: $loader_keyframe_4 + 100ms;
 $loader_keyframe_5: $loader_keyframe_4 + $loader_keyduration_4;
+$loader_keyframe_6: $loader_keyframe_5 + $loader_keyduration_5 - 400ms; // Lang Dot animation
+$loader_keyframe_7: $loader_keyframe_6 + $loader_keyduration_6; // Lang Dot animation
 
 $phrase-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
 

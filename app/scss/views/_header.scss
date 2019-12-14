@@ -115,43 +115,55 @@
 
 				&.spanish, 
 				&.english{
-					&:after{
-						content: "";
-						position: absolute;
-						display: inline-block;
-						display: none;
-						width: getvwDesktop(24vw);
-						height: getvwDesktop(24vw);
-					}
 					&:hover, &.current{
-						&.spanish{
-							&:after{
-								background-color: $orange;
-								border-radius: 50%;
-								left: -1.4vw;
-								display: block;
-							}
-						}
-						&.english{
-							&:after{
-								background-color: $blue;
-								border-radius: 50%;
-								right: -1.4vw;
-								display: block;
-							}
+						.color-dot{
+							display: block;
 						}
 					}
 				}
 
 				&.spanish{
 					margin-right:0.26041vw;
+
+					.color-dot{
+						left: -1.4vw;
+						&:after{
+							background-color: $orange;
+						}
+					}
 				}
 				&.english{
 					margin-left:0.26041vw;
+
+					.color-dot{
+						right: -1.4vw;
+						&:after{
+							background-color: $blue;
+						}
+					}
 				}
 
 				&:nth-child(2){
 					left: 48%;
+				}
+
+				.color-dot{
+					position: absolute;
+					display: none;
+					width: getvwDesktop(24vw);
+					height: getvwDesktop(48vw);
+					// border: 1px solid red;
+					overflow: hidden;
+					@include translate3d(0, -25%, 0);
+
+					&:after{
+						content: '';
+						display: block;
+						width: 100%;
+						height: 50%;
+						border-radius: 50%;
+						@include translate3d(0, 200%, 0);
+					}
 				}
 			}
 		}
@@ -217,6 +229,27 @@
 			p.phrase{
 				@include ani-duration(0s);
 				@include ani-name(show);
+			}
+
+			ul.language-wrapper{
+				li{
+					&.spanish, 
+					&.english{
+						.color-dot{
+							// @include transitions-ease(.7s);
+							@include trans-custom(all, $loader_keyduration_7, cubic-bezier(.45,.01,.27,2.5), $loader_keyframe_7);
+							// @include trans-custom(all, $loader_keyduration_7, cubic-bezier(.45,.01,.27,2.5), $loader_keyduration_6);
+							@include translate3d(0,25%,0);
+
+							&:after{
+								// @include transitions-ease(.7s);
+								@include trans-custom(all, $loader_keyduration_6, $easeOutCubic, $loader_keyframe_6);
+								// @include trans-custom(all, $loader_keyduration_6, $easeOutCubic, 0s);
+								@include translate3d(0,0,0);
+							}
+						}
+					}
+				}
 			}
 		}
 	}
