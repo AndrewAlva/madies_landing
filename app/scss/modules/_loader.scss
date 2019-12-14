@@ -18,7 +18,7 @@ $loader_keyframe_7: $loader_keyframe_6 + $loader_keyduration_6; // Lang Dot anim
 
 $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 
-
+// General styles ==================================================================
 #loader-screen{
 	z-index: 999;
 	position: fixed;
@@ -44,7 +44,7 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 		margin: auto;
 		top: 2.96vw;
 		width: 100%;
-		height: getvwDesktop(70vw);
+		// height: getvwDesktop(70vw);
 		overflow: hidden;
 		@include translate3d(0, 41.5vh, 0);
 	}
@@ -54,8 +54,8 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 		margin: auto;
 		top: 0; bottom: 0;
 		left: 0; right: 0;
-		width: getvwDesktop(285vw);
-		height: getvwDesktop(60vw);
+		// width: getvwDesktop(285vw);
+		// height: getvwDesktop(60vw);
 		@include transform-origin(bottom, center);
 		@include ani-ease(cubic-bezier(0.55, 0.055, 0.675, 0.19));
 		@include ani-fillmode(both);
@@ -100,7 +100,6 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 
 		.center-wrap{
 			@include trans-customease-delay($loader_keyduration_3, $phrase-ease, $loader_keyframe_3);
-			@include translate3d(0, 0, 0);
 		}
 
 		.logo-wrap{
@@ -123,6 +122,67 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 	}
 }
 
+// Mobile styles ==================================================================
+.is-mobile{
+	#loader-screen{
+		.center-wrap{
+			height: getvw(70vw);
+		}
+
+		.logo-wrap{
+			width: getvw(142vw);
+			height: getvw(30vw);
+		}
+
+		.tagline-wrap{
+			height: getvw(32vw);
+
+			h2{
+				font-size: 4vw;
+			}
+		}
+
+		&.loaded{
+			.center-wrap{
+				@include translate3d(0, -12vh, 0);
+			}
+		}
+	}
+}
+
+// Desktop styles ==================================================================
+.is-desktop{
+	#loader-screen{
+		.center-wrap{
+			height: getvwDesktop(70vw);
+		}
+
+		.logo-wrap{
+			width: getvwDesktop(285vw);
+			height: getvwDesktop(60vw);
+		}
+
+		.tagline-wrap{
+			height: getvwDesktop(32vw);
+
+			h2{
+				font-size: 2.1875vw;
+			}
+		}
+
+		&.loaded{
+			.center-wrap{
+				@include translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+
+
+
+
+// Animation Keyframes =================================
 @keyframes deform-up{
 	0% {
 		@include scale-trans3d(1, 1, 0, 0, 0);
@@ -133,7 +193,7 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 	}
 
 	100% {
-		@include scale-trans3d(1, 1.6, 0, -105%, 0);
+		@include scale-trans3d(1, 1.6, 0, -106%, 0);
 	}
 }
 
@@ -152,6 +212,7 @@ $phrase-ease: cubic-bezier(0.64, 0.135, 0.15, 0.86);
 	}
 	to {
 		opacity: 0;
+		display: none;
 	}
 }
 @keyframes show {
