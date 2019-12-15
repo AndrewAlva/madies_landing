@@ -19,7 +19,7 @@ function Carousel(sliderID, projPrefix){
 	this.activeProject = 0;
 
 	// Duration of transition animations
-	this.duration = 1300;
+	this.duration = 1500;
 
 	// Go to 'Prev' slide trigger
 	this.prevTrigger = null;

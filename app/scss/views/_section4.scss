@@ -234,8 +234,15 @@
 				}
 
 				img{
-					@include scale(1.1,1.1);
-					@include transitions-ease(1.2s);
+					// @include trans-custom(transform, 1.6s, cubic-bezier(.42,.63,1,0), 0s);
+					// @include scale(1.7,1.7);
+
+					// Keyframes attempt
+					@include ani-name(big-slides-outro);
+					@include ani-duration(1.2s);
+					@include ani-ease(cubic-bezier(.3,0,.2,1));
+					@include ani-fillmode(forwards);
+					@include ani-delay(0s);
 				}
 
 				&.active{
@@ -250,7 +257,12 @@
 					}
 
 					img{
-						@include scale(1,1);
+						// @include trans-ease-delay-transform(1.2s, .4s)
+						// @include scale(1,1);
+
+						// Keyframes attempt
+						@include ani-name(big-slides-intro);
+						@include ani-delay(.4s);
 					}
 				}
 			}
@@ -593,3 +605,27 @@ section#section4{
 		}
 	}
 }
+
+
+
+// ====================== Keyframe animations =====================
+// Big images on slider
+@keyframes big-slides-intro {
+	0%	{
+		@include scale(1.8,1.8);
+	}
+	100%	{
+		@include scale(1,1);
+	}
+}
+
+@keyframes big-slides-outro {
+	0%	{
+		@include scale(1,1);
+	}
+	100%	{
+		@include scale(1.12,1.12);
+	}
+}
+
+
