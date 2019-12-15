@@ -58,7 +58,8 @@
 		}
 
 		.img-wrapper{
-			margin-top: -11.7vw;
+			// margin-top: -11.7vw;
+			margin-top: -3.05vw;
 			// height: getvw(645vw);
 			height: getvw(767vw);
 
@@ -77,13 +78,13 @@
 	}
 
 	// Spanish styling
-	&.es{
-		section#section5{
-			.img-wrapper{
-				margin-top: -3.05vw;
-			}
-		}
-	}
+	// &.es{
+	// 	section#section5{
+	// 		.img-wrapper{
+	// 			margin-top: -3.05vw;
+	// 		}
+	// 	}
+	// }
 }
 
 
@@ -155,7 +156,8 @@
 			}
 		}
 		.img-wrapper{
-			margin-top: -9.7vw;
+			// margin-top: -9.7vw;
+			margin-top: -2.4vw;
 			// height: getvwDesktop(919vw);
 			height: getvwDesktop(1088vw);
 
@@ -174,11 +176,11 @@
 	}
 
 	// Spanish HTML style ======================
-	&.es{
-		section#section5 .img-wrapper{
-			margin-top: -2.4vw;
-		}
-	}
+	// &.es{
+	// 	section#section5 .img-wrapper{
+	// 		margin-top: -2.4vw;
+	// 	}
+	// }
 }
 
 
