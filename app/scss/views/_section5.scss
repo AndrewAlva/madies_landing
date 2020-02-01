@@ -245,7 +245,7 @@
 				@include flexWrap;
 			}
 
-			&.animate{
+			.mbrt-cascade.animate{
 				.inview-translate{
 					@include trans-customease-delay(1.4s, $easeOutCubic, 0s);
 					@include translate3d(0,0,0);
