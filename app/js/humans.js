@@ -1,0 +1,12 @@
+console.log("Site designed and developed in 🇲🇽 Mexico City by Mandelbrot Studio & Andrew Alvarado");
+console.log("https://mandelbrot.mx/");
+console.log("https://andrew.studio/");
+console.log("");
+console.log("UI Design: Zero Morales");
+console.log("👉 https://www.instagram.com/zero_alex/");
+console.log("");
+console.log("Front-End Development:");
+console.log("  Kenny Celis");
+console.log("  👉 https://www.instagram.com/kennyfuckingcelis/");
+console.log("  Andrew Alvarado");
+console.log("  👉 https://www.instagram.com/andrew__alva/");
